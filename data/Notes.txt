@@ -1,0 +1,15 @@
+1. file name:
+fishnetpoint + hour
+eg. fishnetpoint05.txt : dataset for 5:00 am ~ 6:00 am 
+ 
+
+2. variables:
+FID: ID of each sampled sites
+freq: number of mobile user at corresponding sites
+long: longitude of sites
+lat: latitude of sites
+
+NOTICE: varible "longitude" and "latitude" is not what we want, it's just a random location near sampled sites.
+        use "long" and "lat" instead.
+
+hour: 5 means 5:00~6:00 am

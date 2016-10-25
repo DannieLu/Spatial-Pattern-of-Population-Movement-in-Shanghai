@@ -13,3 +13,11 @@ NOTICE: varible "longitude" and "latitude" is not what we want, it's just a rand
         use "long" and "lat" instead.
 
 hour: 5 means 5:00~6:00 am
+
+
+3. GSM_all.csv  
+   Merge all datasets(fishnetpoint05~~~fishnetpoint09) in GSM_all.csv
+
+   use this one instead.
+
+

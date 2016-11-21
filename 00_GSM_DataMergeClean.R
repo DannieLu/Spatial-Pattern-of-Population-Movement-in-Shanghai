@@ -42,3 +42,22 @@ library(gstat)
   write.csv(D,'GSM_all.csv')
 }
 # end of merge data sets into one file
+
+
+# 
+
+filelist<-list.files(pattern = '*.txt')
+filelist<-filelist[seq(2,10,2)]
+
+D<-data.frame()
+for (i in 1:5)
+{
+  D.raw<-read.table(filelist[i],sep=',',header = T)
+  D05<-D.raw[c('long','lat','freq','NEAR_DIST')]# other hour
+  D05$hour<-rep(i+4,nrow(D05))
+  D<-rbind(D,D05)
+  rm(D05)
+  rm(D.raw)
+}
+
+write.csv(D,'GSM_all_withDist.csv')

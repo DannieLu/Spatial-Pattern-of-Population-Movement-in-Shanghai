@@ -47,13 +47,13 @@ library(gstat)
 # 
 
 filelist<-list.files(pattern = '*.txt')
-filelist<-filelist[seq(2,10,2)]
+filelist<-filelist[seq(2,15,3)]
 
 D<-data.frame()
 for (i in 1:5)
 {
   D.raw<-read.table(filelist[i],sep=',',header = T)
-  D05<-D.raw[c('long','lat','freq','NEAR_DIST')]# other hour
+  D05<-D.raw[c('FID','long','lat','freq','D2Metro','D2Road')]# other hour
   D05$hour<-rep(i+4,nrow(D05))
   D<-rbind(D,D05)
   rm(D05)

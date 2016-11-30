@@ -181,101 +181,65 @@ esc.combine(gres)
 dir.combine(gres)
 
 #################################### Model Fitting #############################################
-# empirical semivariogram
-par(mfrow=c(1,1))
-ani.vario.class <- variog(gres.aniso,estimator.type="classical")
-ani.vario.modul <- variog(gres.aniso,estimator.type="modulus")
-plot(ani.vario.class,main='Variogram with Transformed Coords')
-points(ani.vario.modul$u,ani.vario.modul$v,col="red")
-legend('bottomright',legend = c('classic','Cressie'),,pch = 1,col = c(1,2))
+# empirical semivariogram fitting
 
-vario <- ani.vario.class
-# Spherical covariance
-variofit1 <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="spherical")
-variofit1.cressie <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="spherical",
-                              weights="cressie")
-s1 <- c(variofit1$nugget, variofit1$cov.pars[1], variofit1$cov.pars[2], 
-        variofit1$practicalRange, variofit1$value)
-s2 <- c(variofit1.cressie$nugget, variofit1.cressie$cov.pars[1], variofit1.cressie$cov.pars[2], 
-        variofit1.cressie$practicalRange, variofit1.cressie$value)
-
-# exponential
-variofit2 <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="exponential")
-variofit2.cressie <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="exponential",
-                              weights="cressie")
-
-e1 <- c(variofit2$nugget, variofit2$cov.pars[1], variofit2$cov.pars[2], 
-        variofit2$practicalRange, variofit2$value)
-e2 <- c(variofit2.cressie$nugget, variofit2.cressie$cov.pars[1], variofit2.cressie$cov.pars[2], 
-        variofit2.cressie$practicalRange, variofit2.cressie$value)
-
-# Gaussian covariance
-variofit3 <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="gaussian")
-variofit3.cressie <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="gaussian",
-                              weights="cressie")
-g1 <- c(variofit3$nugget, variofit3$cov.pars[1], variofit3$cov.pars[2], 
-        variofit3$practicalRange, variofit3$value)
-g2 <- c(variofit3.cressie$nugget, variofit3.cressie$cov.pars[1], variofit3.cressie$cov.pars[2], 
-        variofit3.cressie$practicalRange, variofit3.cressie$value)
-
-# matern covariance
-variofit4 <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="matern",
-                      fix.kappa=FALSE,kappa=5)
-variofit4.cressie <- variofit(vario,ini.cov.pars=c(1,1000),cov.model="matern",
-                              weights="cressie",fix.kappa=FALSE,kappa=5)
-
-m1 <- c(variofit4$nugget, variofit4$cov.pars[1], variofit4$cov.pars[2], 
-        variofit4$practicalRange, variofit4$value)
-m2 <- c(variofit4.cressie$nugget, variofit4.cressie$cov.pars[1], variofit4.cressie$cov.pars[2], 
-        variofit4.cressie$practicalRange, variofit4.cressie$value)
+semfit_s <- semi.fit(gres, Model = 'spherical', xmax = 0.15)
+xtable(semfit_s)
+semfit_e <- semi.fit(gres, Model = 'exponential', xmax = 0.15)
+xtable(semfit_e)
+semfit_g <- semi.fit(gres, Model = 'gaussian', xmax = 0.15)
+xtable(semfit_g)
+semfit_c <- semi.fit(gres, Model = 'cubic', xmax = 0.15)
+xtable(semfit_c)
+semfit_m <- semi.fit(gres, Model = 'matern', xmax = 0.15)
+xtable(semfit_m)
+semfit_ci <- semi.fit(gres, Model = 'circular', xmax = 0.15)
+xtable(semfit_ci)
+semfit_p <- semi.fit(gres, Model = 'power', xmax = 0.15)
+xtable(semfit_p)
+semfit_pe <- semi.fit(gres, Model = 'powered.exponential', xmax = 0.15)
+xtable(semfit_pe)
 
 # comparison
-com <- rbind(s1,s2,e1,e2,g1,g2,m1,m2)
+com <- rbind(semfit_s[, 5], semfit_e[, 5], semfit_g[, 5], semfit_c[, 5], semfit_m[, 5],
+             semfit_ci[, 5], semfit_p[, 5], semfit_pe[, 5])
+me <- apply(com, 1, mean)
+com <- cbind(com, me)
+rm(me)
 com <- data.frame(com)
+colnames(com) <- c(5:9, 'mean')
+rownames(com) <- c('Spherical', 'Exponential', 'Gaussian', 'Cubic', 'Matern', 'Circular',
+                   'Power', 'Powered.exponential')
+which.min(com$mean)
 xtable(com, digits = 4)
+semfit_s
 
-# Likelihood Functions
-# spherical
-spherical.ml.fit <- likfit(gres.aniso,cov.model="spherical",ini.cov.pars=c(1,1000))
-print(summary(spherical.ml.fit))
-spherical.anis.ml.fit <- likfit(gres,cov.model="spherical",ini.cov.pars=c(1,1000),
-                                fix.psiA=FALSE,psiA=0,fix.psiR=FALSE,psiR=5)
-print(summary(spherical.anis.ml.fit))
-s <- c(summary(spherical.ml.fit)$likelihood[3], summary(spherical.ml.fit)$likelihood[4],
-       summary(spherical.anis.ml.fit)$likelihood[3], summary(spherical.anis.ml.fit)$likelihood[4])
-s <- as.numeric(s)
-
-# exponential
-exponential.ml.fit <- likfit(gres.aniso,cov.model="exponential",ini.cov.pars=c(1,1000))
-print(summary(exponential.ml.fit))
-exponential.anis.ml.fit <- likfit(gres,cov.model="exponential",ini.cov.pars=c(1,1000),
-                                  fix.psiA=FALSE,psiA=0,fix.psiR=FALSE,psiR=3)
-print(summary(exponential.anis.ml.fit))
-e <- c(summary(exponential.ml.fit)$likelihood[3], summary(exponential.ml.fit)$likelihood[4],
-       summary(exponential.anis.ml.fit)$likelihood[3], summary(exponential.anis.ml.fit)$likelihood[4])
-e <- as.numeric(e)
-
-# Gaussian
-gaussian.ml.fit <- likfit(gres.aniso,cov.model="gaussian",ini.cov.pars=c(1,50))
-print(summary(gaussian.ml.fit))
-gaussian.anis.ml.fit <- likfit(gres,cov.model="gaussian",ini.cov.pars=c(1,50),
-                               fix.psiA=FALSE,psiA=0,fix.psiR=FALSE,psiR=5)
-print(summary(gaussian.anis.ml.fit))
-g <- c(summary(gaussian.ml.fit)$likelihood[3], summary(gaussian.ml.fit)$likelihood[4],
-       summary(gaussian.anis.ml.fit)$likelihood[3], summary(gaussian.anis.ml.fit)$likelihood[4])
-g <- as.numeric(g)
-
-# Matern
-matern.ml.fit <- likfit(gres.aniso,cov.model="matern",ini.cov.pars=c(1,1000))
-print(summary(matern.ml.fit))
-matern.anis.ml.fit <- likfit(gres,cov.model="matern",ini.cov.pars=c(1,1000),
-                             fix.psiA=FALSE,psiA=0,fix.psiR=FALSE,psiR=5)
-print(summary(matern.anis.ml.fit))
-m <- c(summary(matern.ml.fit)$likelihood[3], summary(matern.ml.fit)$likelihood[4],
-       summary(matern.anis.ml.fit)$likelihood[3], summary(matern.anis.ml.fit)$likelihood[4])
-m <- as.numeric(m)
+# Likelihood fitting
+likefit_s <- lik.fit(gres, Model = 'spherical', xmax = 0.15, r = 0.1)
+xtable(likefit_s)
+likefit_e <- lik.fit(gres, Model = 'exponential', xmax = 0.15, r = 0.1)
+xtable(likefit_e)
+likefit_g <- lik.fit(gres, Model = 'gaussian', xmax = 0.15, r = 0.001)
+xtable(likefit_g)
+likefit_c <- lik.fit(gres, Model = 'cubic', xmax = 0.15, r = 0.1)
+xtable(likefit_c)
+likefit_m <- lik.fit(gres, Model = 'matern', xmax = 0.15, r = 0.1)
+xtable(likefit_m)
 
 # comparison
+comp <- rbind(likefit_s[, 5], likefit_e[, 5], likefit_g[, 5], likefit_c[, 5], likefit_m[, 5], 
+              likefit_s[, 6], likefit_e[, 6], likefit_g[, 6], likefit_c[, 6], likefit_m[, 6])
+ma <- apply(com, 1, mean)
+comp <- cbind(com, ma[1:5], ma[6:10])
+rm(ma)
+comp <- data.frame(comp)
+colnames(comp) <- c(5:9, 'mean')
+rownames(com) <- c('Spherical', 'Exponential', 'Gaussian', 'Cubic', 'Matern', 'Circular',
+                   'Power', 'Powered.exponential')
+which.min(com$mean)
+xtable(com, digits = 4)
+semfit_s
+
 comp <- rbind(s, e, g, m)
 comp <- data.frame(comp)
 rownames(comp) <- c('Spherical', 'Exponential', 'Gaussian', 'Matern')

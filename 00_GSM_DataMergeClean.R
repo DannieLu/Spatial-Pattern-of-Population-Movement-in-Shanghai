@@ -61,3 +61,34 @@ for (i in 1:5)
 }
 
 write.csv(D,'GSM_all_withDist.csv')
+
+
+
+#--------------------------------
+# prediction result
+
+setwd('C:/Users/Dannie/Documents/GitHub/Spatial_Project/intermediate')
+
+Mat<-read.csv('true.csv')
+loc<-paste(Mat$x,Mat$y)
+length(unique(loc))
+
+length(unique(Mat$x))
+length(unique(Mat$y))
+
+
+D<-read.csv('true.csv')
+
+for(i in 5:9)
+{
+  Dsub<-D[D$hour==i,]
+  write.csv(Dsub,paste('true_hour',i,'.csv',sep=''))
+}
+
+D<-read.csv('matern.csv')
+
+for(i in 5:9)
+{
+  Dsub<-D[D$hour==i,]
+  write.csv(Dsub,paste('matern',i,'.csv',sep=''))
+}

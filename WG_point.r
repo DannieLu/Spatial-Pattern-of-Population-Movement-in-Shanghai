@@ -9,6 +9,7 @@ library(dplyr)
 #library(gstat)
 #library(ncf) # for correlation 
 library(scales)
+library(mgcv)
 
 ##################################### Data Manipulation #########################################
 # 00 file
@@ -253,6 +254,25 @@ pred.lik.combine(data, gres)
 # not set zlim
 
 
+#################################### GAM with Predictor #########################################
+glm_nsp <- glm(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2),
+               family = Gamma, data = data[data$freq > 0, ])
+summary(glm_nsp)
+stepAIC(glm_nsp, direction = 'both')
+gam_sp <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2) + s(long, lat), 
+              family = Gamma, data = data[data$freq > 0, ])
+summary(gam_sp)
+AIC(gam_sp)
+gam_sp1 <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + s(long, lat), 
+              family = Gamma, data = data[data$freq > 0, ])
+summary(gam_sp1)
+AIC(gam_sp1)
 
 
+glm_nsp_nb <- glm(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2), family = nb, data = data)
+summary(glm_nsp_nb)
+gam_sp_nb <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2) + s(long, lat), family = nb, data = data)
+summary(gam_sp_nb)
+AIC(gam_sp_nb)
 
+stepAIC(glm_nsp, direction = 'both')

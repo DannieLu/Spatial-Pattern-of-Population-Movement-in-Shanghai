@@ -229,30 +229,19 @@ xtable(likefit_m)
 # comparison
 comp <- rbind(likefit_s[, 5], likefit_e[, 5], likefit_g[, 5], likefit_c[, 5], likefit_m[, 5], 
               likefit_s[, 6], likefit_e[, 6], likefit_g[, 6], likefit_c[, 6], likefit_m[, 6])
-ma <- apply(com, 1, mean)
-comp <- cbind(com, ma[1:5], ma[6:10])
+ma <- apply(comp, 1, mean)
+comp <- cbind(comp, ma)
 rm(ma)
 comp <- data.frame(comp)
 colnames(comp) <- c(5:9, 'mean')
-rownames(com) <- c('Spherical', 'Exponential', 'Gaussian', 'Cubic', 'Matern', 'Circular',
-                   'Power', 'Powered.exponential')
-which.min(com$mean)
-xtable(com, digits = 4)
-semfit_s
-
-comp <- rbind(s, e, g, m)
-comp <- data.frame(comp)
-rownames(comp) <- c('Spherical', 'Exponential', 'Gaussian', 'Matern')
-colnames(comp) <- c('isoAIC', 'isoBIC', 'anisoAIC', 'anisoBIC')
+rownames(comp) <- c('Spherical AIC', 'Exponential AIC', 'Gaussian AIC', 'Cubic AIC', 'Matern AIC',
+                   'Spherical BIC', 'Exponential BIC', 'Gaussian BIC', 'Cubic BIC', 'Matern BIC')
+which.min(comp[1:5, 6])
+which.min(comp[6:10, 6])
 xtable(comp, digits = 4)
+likefit_e
+likefit_m
 
-plot(vario)
-lines(variofit1)
-lines(variofit1.cressie,col="blue")
-lines(gaussian.ml.fit,col="red")
-lines(spherical.anis.ml.fit,col="green3")
-legend('bottomright',legend=c('Sph.WLS','Sph.cressie','Gau.ML','Sph.ML'),lty=1,
-       col=c('black','blue','red','green3'))
 #################################### Model Prediction ###########################################
 int.gres.aniso <- interp(gres.aniso$coords[,1], gres.aniso$coords[,2], gres.aniso$data)
 image(int.gres.aniso)

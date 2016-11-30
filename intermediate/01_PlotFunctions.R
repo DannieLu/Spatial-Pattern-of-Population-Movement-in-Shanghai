@@ -439,7 +439,8 @@ pred.semi.combine <- function(D1, D2){
   par(mfcol=c(1, 1))
 }
 
-pred.lik.combine <- function(D1, D2){
+pred.lik.combine <- function(D1, D2)
+{
   uniq.hour <- as.vector(distinct(D1, hour)$hour)
   par(mfrow = c(2, 3), mar = c(4, 4, 2, 1))
   model <- list(fit1, fit2, fit3, fit4, fit5)

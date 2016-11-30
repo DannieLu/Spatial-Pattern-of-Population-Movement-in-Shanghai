@@ -243,11 +243,14 @@ likefit_e
 likefit_m
 
 #################################### Model Prediction ###########################################
-pred.compare(data)
+compare <- pred.compare(data, gres)
+# cannot find zmax, zmin
 
+pred.semi.combine(data, gres)
+# not set zlim
 
-
-
+pred.lik.combine(data, gres)
+# not set zlim
 
 
 

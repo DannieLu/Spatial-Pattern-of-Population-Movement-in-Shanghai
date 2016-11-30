@@ -310,11 +310,12 @@ lik.fit <- function(D, Model, xmax, r)
 
 # 12. Model Prediction
       # Compare between four models
-pred.compare <- function(D)
+pred.compare <- function(D1, D2)
 {
-  uniq.hour <- as.vector(distinct(D, hour)$hour)
+  uniq.hour <- as.vector(distinct(D1, hour)$hour)
   op <- par(no.readonly = TRUE)
   par(mfrow = c(2, 2), mar = c(4,3,1,1), mgp = c(1.5, 0.5, 0))
+  zmax <- 100000
   compare <- data.frame()
   true <- data.frame()
   sph <- data.frame()
@@ -323,55 +324,55 @@ pred.compare <- function(D)
   model <- list(fit1, fit2, fit3, fit4, fit5)
   for (i in uniq.hour)
   {
-    Di <- filter(D, hour == i)
-    gDi <- as.geodata(Di, coords.col = c('long', 'lat'), data.col = 'freq')
+    D1i <- filter(D1, hour == i)
+    gD1i <- as.geodata(D1i, coords.col = c('long', 'lat'), data.col = 'freq')
+    D2i <- filter(D2, hour == i)
+    gD2i <- as.geodata(D2i, coords.col = c('long', 'lat'), data.col = 'fre')
     #loci <- expand.grid(seq(min(gDi$coords[, 1]), max(gDi$coords[, 1]), 0.005),
     #                        seq(min(gDi$coords[, 2]),max(gDi$coords[, 2]), 0.005))
-    int.gdata <- interp(gDi$coords[, 1], gDi$coords[, 2], gDi$data)
+    int.gdata <- interp(gD1i$coords[, 1], gD1i$coords[, 2], gD1i$data)
     loci <- expand.grid(int.gdata$x, int.gdata$y)
     
     # Spherical Semivariogram Prediction Model
-    simul.var <- variog(gDi, estimator.type = "modulus")
+    simul.var <- variog(gD2i, estimator.type = "modulus")
     sill <- max(simul.var$v)*0.9
     variofit_s <- variofit(simul.var, ini.cov.pars = c(sill, 0.1), cov.model = 'spherical', 
                            weights = 'cressie')
-    sph.pred.image <- krige.conv(gDi, locations = loci,
+    sph.pred.image <- krige.conv(gD2i, locations = loci,
                                  krige = krige.control(type.krige = "OK", obj.model = variofit_s))
     newx <- cbind(1, loci[, 1], loci[, 2], I(loci[, 1]^2), I(loci[, 2]^2), loci[, 1]*loci[, 2])
     pred_s <- sph.pred.image$predict + newx %*% coef(model[[i-4]])
     
     # Exponential Likelihood Prediction Image
-    mlfit_e <- likfit(gDi, cov.model = 'exponential', ini.cov.pars=c(sill, 0.1))
-    exp.pred.image <- krige.conv(gDi, locations = loci,
+    mlfit_e <- likfit(gD2i, cov.model = 'exponential', ini.cov.pars=c(sill, 0.1))
+    exp.pred.image <- krige.conv(gD2i, locations = loci,
                                  krige = krige.control(type.krige = "OK", obj.model = mlfit_e))
     pred_e <- exp.pred.image$predict + newx %*% coef(model[[i-4]])
     
     # Matern Likelihood Prediction Image
-    mlfit_m <- likfit(gDi, cov.model = 'matern', ini.cov.pars=c(sill, 0.1))
-    matern.pred.image <- krige.conv(gDi, locations = loci,
+    mlfit_m <- likfit(gD2i, cov.model = 'matern', ini.cov.pars=c(sill, 0.1))
+    matern.pred.image <- krige.conv(gD2i, locations = loci,
                                     krige = krige.control(type.krige = "OK", obj.model = mlfit_m))
     pred_m <- matern.pred.image$predict + newx %*% coef(model[[i-4]])
     
-    zmax <- max(gDi$data, pred_s, pred_e, pred_m)
-    zmin <- min(gDi$data, pred_s, pred_e, pred_m)
     # true image
     plot(loci, type="n", xlab = 'True Image', ylab = '')
-    image(int.gdata, add = T, zlim = c(zmin, zmax)) 
+    image(int.gdata, add = T, zlim = c(0, zmax)) 
     contour(int.gdata, add=TRUE)
     
     # semivariogram spherical
     plot(loci, type="n", xlab = 'Semivariogram Spherical', ylab = '')
-    image(sph.pred.image, values = pred_s, add = T, zlim = c(zmin, zmax))
+    image(sph.pred.image, values = pred_s, add = T, zlim = c(0, zmax))
     contour(sph.pred.image, add=TRUE)
     
     # likelihood exponential
     plot(loci, type="n", xlab = 'Likelihood Exponential', ylab = '')
-    image(exp.pred.image, values = pred_e, add = T, zlim = c(zmin, zmax))
+    image(exp.pred.image, values = pred_e, add = T, zlim = c(0, zmax))
     contour(exp.pred.image, add=TRUE)
     
     # likelihood matern
     plot(loci, type="n", xlab = 'Likelihood Matern', ylab = '')
-    image(matern.pred.image, values = pred_m, add = T, zlim = c(zmin, zmax))
+    image(matern.pred.image, values = pred_m, add = T, zlim = c(0, zmax))
     contour(matern.pred.image, add=TRUE)
     
     par(op)
@@ -382,38 +383,88 @@ pred.compare <- function(D)
     rss_m <- sum((int.gdata$z - matrix(pred_m, 40, 40))^2)
     comp <- c(rss_s, rss_e, rss_m)
     compare <- rbind(compare, comp)
-    colnames(compare) <- c('Spherical', 'Exponential', 'Matern')
-    rownames(compare) <- i
+    
     
     # write out predicted values
     tru <- cbind(rep(int.gdata$x, 40), rep(int.gdata$y, each = 40), as.vector(int.gdata$z), i)
     true <- rbind (true, tru)
-    colnames(true) <- c('x', 'y', 'value', 'hour')
     sphe <- cbind(rep(int.gdata$x, 40), rep(int.gdata$y, each = 40), pred_s, i)
     sph <- rbind (sph, sphe)
     expon <- cbind(rep(int.gdata$x, 40), rep(int.gdata$y, each = 40), pred_e, i)
     expo <- rbind (expo, expon)
-    mate <- cbind(rep(int.gdata$x, 40), rep(int.gdata$y, each = 40), pred_m, i)
-    mater <- rbind (mate, mater)
+    mater <- cbind(rep(int.gdata$x, 40), rep(int.gdata$y, each = 40), pred_m, i)
+    mate <- rbind (mate, mater)
   }
-  write.csv('true', file = 'Spatial_Project/intermediate/true.csv')
-  write.csv('sph', file = 'Spatial_Project/intermediate/spherical.csv')
-  write.csv('expo', file = 'Spatial_Project/intermediate/exponential.csv')
-  write.csv('mate', file = 'Spatial_Project/intermediate/matern.csv')
+  colnames(compare) <- c('Spherical', 'Exponential', 'Matern')
+  rownames(compare) <- uniq.hour
+  colnames(true) <- c('x', 'y', 'value', 'hour')
+  colnames(sph) <- c('x', 'y', 'value', 'hour')
+  colnames(expo) <- c('x', 'y', 'value', 'hour')
+  colnames(mate) <- c('x', 'y', 'value', 'hour')
+  write.csv(true, file = 'Spatial_Project/intermediate/true.csv')
+  write.csv(sph, file = 'Spatial_Project/intermediate/spherical.csv')
+  write.csv(expo, file = 'Spatial_Project/intermediate/exponential.csv')
+  write.csv(mate, file = 'Spatial_Project/intermediate/matern.csv')
   return(compare)
 }
 
       # Compare between time
-pred.semi.combine <- function(D){
-  uniq.hour <- as.vector(distinct(D, hour)$hour)
+pred.semi.combine <- function(D1, D2){
+  uniq.hour <- as.vector(distinct(D1, hour)$hour)
   par(mfrow = c(2, 3), mar = c(4, 4, 2, 1))
+  model <- list(fit1, fit2, fit3, fit4, fit5)
   for (i in uniq.hour)
   {
-    Di <- filter(D, hour == i)
-    int.data <- interp(Di$long, Di$lat, Di$freq)
-    image(int.data, xlab = paste(i,': 00 ~',i+1,': 00 am'), ylab = '',
-          xlim = range(Di$long), ylim = range(Di$lat), zlim = range(D$freq))
-    contour(int.data, add=TRUE)
+    D1i <- filter(D1, hour == i)
+    gD1i <- as.geodata(D1i, coords.col = c('long', 'lat'), data.col = 'freq')
+    D2i <- filter(D2, hour == i)
+    gD2i <- as.geodata(D2i, coords.col = c('long', 'lat'), data.col = 'fre')
+    int.gdata <- interp(gD1i$coords[, 1], gD1i$coords[, 2], gD1i$data)
+    loci <- expand.grid(int.gdata$x, int.gdata$y)
+    
+    # Spherical Semivariogram Prediction Model
+    simul.var <- variog(gD2i, estimator.type = "modulus")
+    sill <- max(simul.var$v)*0.9
+    variofit_s <- variofit(simul.var, ini.cov.pars = c(sill, 0.1), cov.model = 'spherical', 
+                           weights = 'cressie')
+    sph.pred.image <- krige.conv(gD2i, locations = loci,
+                                 krige = krige.control(type.krige = "OK", obj.model = variofit_s))
+    newx <- cbind(1, loci[, 1], loci[, 2], I(loci[, 1]^2), I(loci[, 2]^2), loci[, 1]*loci[, 2])
+    pred_s <- sph.pred.image$predict + newx %*% coef(model[[i-4]])
+    
+    plot(loci, type="n", xlab = paste(i,': 00 ~',i+1,': 00 am'), ylab = '')
+    image(sph.pred.image, values = pred_s, add = T)
+    contour(sph.pred.image, add=TRUE)
   }
   par(mfcol=c(1, 1))
 }
+
+pred.lik.combine <- function(D1, D2){
+  uniq.hour <- as.vector(distinct(D1, hour)$hour)
+  par(mfrow = c(2, 3), mar = c(4, 4, 2, 1))
+  model <- list(fit1, fit2, fit3, fit4, fit5)
+  for (i in uniq.hour)
+  {
+    D1i <- filter(D1, hour == i)
+    gD1i <- as.geodata(D1i, coords.col = c('long', 'lat'), data.col = 'freq')
+    D2i <- filter(D2, hour == i)
+    gD2i <- as.geodata(D2i, coords.col = c('long', 'lat'), data.col = 'fre')
+    int.gdata <- interp(gD1i$coords[, 1], gD1i$coords[, 2], gD1i$data)
+    loci <- expand.grid(int.gdata$x, int.gdata$y)
+    
+    # Exponential Likelihood Prediction Image
+    simul.var <- variog(gD2i, estimator.type = "modulus")
+    sill <- max(simul.var$v)*0.9
+    mlfit_e <- likfit(gD2i, cov.model = 'exponential', ini.cov.pars=c(sill, 0.1))
+    exp.pred.image <- krige.conv(gD2i, locations = loci,
+                                 krige = krige.control(type.krige = "OK", obj.model = mlfit_e))
+    newx <- cbind(1, loci[, 1], loci[, 2], I(loci[, 1]^2), I(loci[, 2]^2), loci[, 1]*loci[, 2])
+    pred_e <- exp.pred.image$predict + newx %*% coef(model[[i-4]])
+    
+    plot(loci, type="n", xlab = paste(i,': 00 ~',i+1,': 00 am'), ylab = '')
+    image(exp.pred.image, values = pred_e, add = T)
+    contour(exp.pred.image, add=TRUE)
+  }
+  par(mfcol=c(1, 1))
+}
+

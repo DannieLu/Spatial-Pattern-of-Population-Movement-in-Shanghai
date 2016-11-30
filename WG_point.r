@@ -86,16 +86,16 @@ boxcox(lm(data + 1 ~ .^2 + I(long^2) + I(lat^2), data = gdata8))
 boxcox(lm(data + 1 ~ .^2 + I(long^2) + I(lat^2), data = gdata9))
 par(mfrow=c(1,1))
 
-gdata5<-as.geodata(filter(lgdata, hour == 5), coords.col=2:3,data.col=4)
-plot(gdata5)
-gdata6<-as.geodata(filter(lgdata, hour == 6), coords.col=2:3,data.col=4)
-plot(gdata6)
-gdata7<-as.geodata(filter(lgdata, hour == 7), coords.col=2:3,data.col=4)
-plot(gdata7)
-gdata8<-as.geodata(filter(lgdata, hour == 8), coords.col=2:3,data.col=4)
-plot(gdata8)
-gdata9<-as.geodata(filter(lgdata, hour == 9), coords.col=2:3,data.col=4)
-plot(gdata9)
+lgdata5<-as.geodata(filter(lgdata, hour == 5), coords.col=2:3,data.col=4)
+plot(lgdata5)
+lgdata6<-as.geodata(filter(lgdata, hour == 6), coords.col=2:3,data.col=4)
+plot(lgdata6)
+lgdata7<-as.geodata(filter(lgdata, hour == 7), coords.col=2:3,data.col=4)
+plot(lgdata7)
+lgdata8<-as.geodata(filter(lgdata, hour == 8), coords.col=2:3,data.col=4)
+plot(lgdata8)
+lgdata9<-as.geodata(filter(lgdata, hour == 9), coords.col=2:3,data.col=4)
+plot(lgdata9)
 # row & col boxplots
 long.combine(lgdata)
 lat.combine(lgdata)
@@ -243,48 +243,13 @@ likefit_e
 likefit_m
 
 #################################### Model Prediction ###########################################
-int.gres.aniso <- interp(gres.aniso$coords[,1], gres.aniso$coords[,2], gres.aniso$data)
-image(int.gres.aniso)
-contour(int.gres.aniso, add = T)
-loci.ani <- expand.grid(seq(min(gres.aniso$coords[,1]),max(gres.aniso$coords[,1]),10),
-                        seq(min(gres.aniso$coords[,2]),max(gres.aniso$coords[,2]),10))
-new <- c(258,44)
-newlat <- new[2]*pi/180
-newlong <- new[1]*pi/180
-new.x <- dx*(newlong-mean.long)/(max.long-min.long)
-new.y <- dy*(newlat-mean.lat)/(max.lat-min.lat)
-newx <- c(1,new.x, new.x^2,new.y,new.y^2,new.x*new.y)
-aniso.coords <- coords.aniso(t(c(new.x,new.y)),aniso.pars=c(0,3),reverse=FALSE)
-# Gaussian Prediction 
-# Image
-gauss.pred.image <- krige.conv(gres.aniso,locations=loci.ani,
-                               krige=krige.control(type.krige="OK",obj.model=gaussian.ml.fit))
+pred.compare(data)
 
-image(gauss.pred.image)
-contour(gauss.pred.image,add=TRUE)
 
-# Value
-gauss.pred <- krige.conv(gres.aniso,locations=aniso.coords,
-                         krige=krige.control(type.krige="OK",obj.model=gaussian.ml.fit))
-gauss.pred$predict
-gauss.pred$krige.var
-gauss.pred$predict + sum(fit3$coefficients*newx)
-gauss.pred$predict + sum(fit3$coefficients*newx)-1.96*sqrt(gauss.pred$krige.var)
-gauss.pred$predict + sum(fit3$coefficients*newx)+1.96*sqrt(gauss.pred$krige.var)
 
-# Spherical Semivariogram Prediction 
-# Image
-sph.pred.image <- krige.conv(gres.aniso,locations=loci.ani,
-                             krige=krige.control(type.krige="OK",obj.model=variofit1))
 
-image(sph.pred.image)
-contour(sph.pred.image,add=TRUE)
 
-# Value
-sph.pred <- krige.conv(gres.aniso,locations=aniso.coords,
-                       krige=krige.control(type.krige="OK",obj.model=variofit1))
-sph.pred$predict
-sph.pred$krige.var
-sph.pred$predict + sum(fit3$coefficients*newx)
-sph.pred$predict + sum(fit3$coefficients*newx)-1.96*sqrt(sph.pred$krige.var)
-sph.pred$predict + sum(fit3$coefficients*newx)+1.96*sqrt(sph.pred$krige.var)
+
+
+
+

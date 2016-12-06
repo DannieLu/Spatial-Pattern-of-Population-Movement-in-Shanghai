@@ -113,6 +113,7 @@ The spatial pattern of population density has a direct relationship with traffic
 
 	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD by time.
 	
+<<<<<<< HEAD
 	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed. From the histograms, we can see that frequency is in exponential shape with even steeper slope. A Gamma distribution may be more appropriate. A log transformation may not be very helpful.
 	
 	For the two covariates, they are also exponentially distributed. This indicates that more people are concentrated near metro lines and expressways.
@@ -215,6 +216,9 @@ The spatial pattern of population density has a direct relationship with traffic
 			\hline
 		\end{tabular}
 	\end{table}
+=======
+	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed.
+>>>>>>> origin/master
 
 	Most of the coefficients are significant, further indicating that the covariates have impact on population density. The impact is huge since the parameter estimations are very close to zero because Gamma family uses inverse link. Results from model further prove previous conclusions from visualization.
 	
@@ -269,10 +273,25 @@ The spatial pattern of population density has a direct relationship with traffic
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{box.png}
 		\caption{Boxplots of Frequency by Hour \label{fig:boxplot}}
+<<<<<<< HEAD
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{qq.png}
 		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
+=======
+	\end{figure}
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{qq.png}
+		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
+	\end{figure}
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{box_log.png}
+		\caption{Boxplots of log-Frequency by Hour \label{fig:lgboxplot}}
+	\end{figure}
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{qq.png}
+		\caption{QQ-Plots of log-Frequency by Hour \label{fig:lgqq}}
+>>>>>>> origin/master
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{box_log.png}

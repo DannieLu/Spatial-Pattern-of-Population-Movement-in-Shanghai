@@ -132,27 +132,55 @@ In order to prepare spatial data for stationarity procss analysis, we need to ch
 \end{figure}
 \FloatBarrier
 
-Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, we set population density as response. Covariates include latitude, longitude, their quadratic term and interaction. Stepwise selection is used for variable screening. Under AIC criterion, full model (Model \ref{mod:polyreg} ) is selected for its best performance.
+Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, Covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help use find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals. 
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{boxcox.png}
+		\caption{Parameters for Box-Cox Transformation\label{fig:boxcox}}
+\end{figure}
+\FloatBarrier
+
+For both scenarios, stepwise selection is used for variable screening. Under AIC criterion, full model (Model \ref{mod:polyreg} ) is selected for its best performance.
 
 \begin{align}
 \label{mod:polyreg}
 Y(s_i)=\beta_0 +\beta_1x_{1i} +\beta_2x_{2i} +\beta_3x_{1i}^2 +\beta_4x_{2i}^2+\beta_5x_{1i}x_{2i}+\epsilon_i
 \end{align}
-where,
+where,\\
 $Y(s_i)$ is population density at location $s_i$;\\
 $x_{1i}$ is latitude of location $s_i$;\\
 $x_{2i}$ is longitude of location $s_i$;\\
-and corresponding estimates are:\\
-$\hat{\beta_0}=-4.524*10^9$;\\
-$\hat{\beta_1}=2.018*10^7$;\\
-$\hat{\beta_2}=6.932*10^7$;\\
-$\hat{\beta_3}=-5.698*10^5$;\\
-$\hat{\beta_4}=-3.018*10^5$;\\
-$\hat{\beta_5}=1.271*10^5$.\\
+
+
+
+For each hour, we remove the underlying spatial trend using polynomial regression model \ref{mod:polyreg} fitted above. By comparing two scenarios, we find that there is no observable improvement in detrending for log scale scenario while the improvement in residual for original scale scenario is obvious. As a result, we adopt the polynomial regression model in scenario one: population density as response. Part of our fitting results is show below as parameter estimates for $5:00-6:00$ am:\\
+\indent $\hat{\beta_0}=-4.524*10^9$;\\
+\indent$\hat{\beta_1}=2.018*10^7$;\\
+\indent$\hat{\beta_2}=6.932*10^7$;\\
+\indent$\hat{\beta_3}=-5.698*10^5$;\\
+\indent$\hat{\beta_4}=-3.018*10^5$;\\
+\indent$\hat{\beta_5}=1.271*10^5$.\\
+Estimates for other time periods are shown in Appendices.\\
+
+As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendices.\\
 
 Thus,instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
 
-\subsection{Anisotropy}\label{sec:anis}
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo5.png}
+		\caption{Exploratory Plot before Detrending(5:00-6:00 am) \label{fig:geo5}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres5.png}
+		\caption{Exploratory Plot after Detrending(5:00-6:00 am)\label{fig:gres5}}
+\end{figure}
+\FloatBarrier
+
+
+
+\subsection{Isotropy}\label{sec:anis}
 Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance. \\
 
 To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different direction are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the direction plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
@@ -173,6 +201,12 @@ To check for isotropy assumption, two widely used methods are to look at the emp
 
 
 	\section{Conclusion}\label{sec:con}
+	
+Nowadays, urban planners are facing with more challenges to adapt to rapid growth of modern metropolitan and urban dynamics. Effectively responding to urban problems such as congestion and stampede is more emphasized than ever before. Cellular data provides a promising solution for such problems for its effectiveness and high resolution. In this paper, we propose a method to demonstrate the spatial and temporal characteristics of population movement both quantitatively and qualitatively, based on cellular data. \\
+
+In this study, we aggregated our data on an hourly basis, and this avoids us to obtain any further conclusion of higher accuracy in terms of time and population density. In the future, we plan to aggregate the data with higher resolution to make more detailed conclusion.
+	
+	
 	
 	\section{Reference}\label{sec:ref}
 	\bibliography{sample}
@@ -200,6 +234,57 @@ To check for isotropy assumption, two widely used methods are to look at the emp
 		\includegraphics[width=\textwidth]{qq.png}
 		\caption{QQ-Plots of log-Frequency by Hour \label{fig:lgqq}}
 	\end{figure}
+	
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo6.png}
+		\caption{Exploratory Plot before Detrending(6:00-7:00 am) \label{fig:geo6}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres6.png}
+		\caption{Exploratory Plot after Detrending(6:00-7:00 am)\label{fig:gres6}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo7.png}
+		\caption{Exploratory Plot before Detrending(7:00-8:00 am) \label{fig:geo7}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres7.png}
+		\caption{Exploratory Plot after Detrending(7:00-8:00 am)\label{fig:gres7}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo8.png}
+		\caption{Exploratory Plot before Detrending(8:00-9:00 am) \label{fig:geo8}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres8.png}
+		\caption{Exploratory Plot after Detrending(8:00-9:00 am)\label{fig:gres8}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo9.png}
+		\caption{Exploratory Plot before Detrending(9:00-10:00 am) \label{fig:geo9}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres9.png}
+		\caption{Exploratory Plot after Detrending(9:00-10:00 am)\label{fig:gres9}}
+\end{figure}
+\FloatBarrier
+	
+	
+	
 
 	\section{Appendices -- R codes}
 	\begin{verbatim}

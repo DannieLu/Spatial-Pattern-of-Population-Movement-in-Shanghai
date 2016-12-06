@@ -18,8 +18,8 @@ library(mgcv)
 opar <- par()
 data <- read.csv('Spatial_Project/GSM_all_withDist.csv',header = T)
 data <- data[, -1]
-summary(data)
-#xtable(summary(data))
+#summary(data)
+xtable(summary(data))
 
 ######################################### Functions #############################################
 source('Spatial_Project/intermediate/01_PlotFunctions.R')
@@ -169,11 +169,6 @@ gres <- bind_rows(gres5, gres6, gres7, gres8, gres9)
 #plot(lgres8)
 #plot(lgres9)
 
-# semivariogram
-semivar.combine(gres)
-semivar.inone(gres, 0.4)
-semivar.inone(gres, 0.4/sqrt(2))
-
 #################################### Check Anistropy ###########################################
 # ESC
 esc.combine(gres)
@@ -182,8 +177,12 @@ esc.combine(gres)
 dir.combine(gres)
 
 #################################### Model Fitting #############################################
-# empirical semivariogram fitting
+# semivariogram
+semivar.combine(gres)
+semivar.inone(gres, 0.4)
+semivar.inone(gres, 0.4/sqrt(2))
 
+# empirical semivariogram fitting
 semfit_s <- semi.fit(gres, Model = 'spherical', xmax = 0.15)
 xtable(semfit_s)
 semfit_e <- semi.fit(gres, Model = 'exponential', xmax = 0.15)
@@ -245,34 +244,33 @@ likefit_m
 
 #################################### Model Prediction ###########################################
 compare <- pred.compare(data, gres)
-# cannot find zmax, zmin
 
 pred.semi.combine(data, gres)
-# not set zlim
 
 pred.lik.combine(data, gres)
-# not set zlim
 
 
 #################################### GAM with Predictor #########################################
 glm_nsp <- glm(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2),
                family = Gamma, data = data[data$freq > 0, ])
-summary(glm_nsp)
+xtable(summary(glm_nsp))
 stepAIC(glm_nsp, direction = 'both')
+sum(glm_nsp$residuals^2)
 gam_sp <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2) + s(long, lat), 
               family = Gamma, data = data[data$freq > 0, ])
-summary(gam_sp)
+xtable(summary(gam_sp)$p.table)
 AIC(gam_sp)
 gam_sp1 <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + s(long, lat), 
               family = Gamma, data = data[data$freq > 0, ])
-summary(gam_sp1)
+xtable(summary(gam_sp1)$p.table, digits = 4)
 AIC(gam_sp1)
 
 
 glm_nsp_nb <- glm(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2), family = nb, data = data)
-summary(glm_nsp_nb)
+xtable(summary(glm_nsp_nb))
+sum(glm_nsp_nb$residuals^2)
 gam_sp_nb <- gam(freq ~ D2Metro * D2Road + I(D2Metro^2) + I(D2Road^2) + s(long, lat), family = nb, data = data)
-summary(gam_sp_nb)
+xtable(summary(gam_sp_nb)$p.table)
 AIC(gam_sp_nb)
 
-stepAIC(glm_nsp, direction = 'both')
+

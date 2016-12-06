@@ -11,6 +11,7 @@
 \usepackage{lscape}
 %\usepackage{hangcaption}
 \usepackage{multirow}
+\usepackage{placeins} % for floatbarrier 
 \bibpunct{(}{)}{;}{a}{}{,}
 
 \oddsidemargin=0.25in
@@ -99,18 +100,76 @@
 		\includegraphics[width=\textwidth]{image.png}
 		\caption{Image Plots of Frequency by Hour \label{fig:image}}
 	\end{figure}
+	\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist.png}
 		\caption{Histograms of Frequency by Hour \label{fig:hist}}
 	\end{figure}
+	\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist_log.png}
 		\caption{Histograms of log-Frequency by Hour \label{fig:lghist}}
 	\end{figure}
+\FloatBarrier
 
 	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD by time.
 	
 	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed.
+
+\subsection{Spatial Trend}\label{sec:spatialtrend}
+
+In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side bar plot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude is shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As is shown, there is a curvature relationship between population density and two coordination variables. 
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{lat.png}
+		\caption{Population Density and Latitude\label{fig:lat}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{long.png}
+		\caption{Population Density and Longitude\label{fig:long}}
+\end{figure}
+\FloatBarrier
+
+Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, we set population density as response. Covariates include latitude, longitude, their quadratic term and interaction. Stepwise selection is used for variable screening. Under AIC criterion, full model (Model \ref{mod:polyreg} ) is selected for its best performance.
+
+\begin{align}
+\label{mod:polyreg}
+Y(s_i)=\beta_0 +\beta_1x_{1i} +\beta_2x_{2i} +\beta_3x_{1i}^2 +\beta_4x_{2i}^2+\beta_5x_{1i}x_{2i}+\epsilon_i
+\end{align}
+where,
+$Y(s_i)$ is population density at location $s_i$;\\
+$x_{1i}$ is latitude of location $s_i$;\\
+$x_{2i}$ is longitude of location $s_i$;\\
+and corresponding estimates are:\\
+$\hat{\beta_0}=-4.524*10^9$;\\
+$\hat{\beta_1}=2.018*10^7$;\\
+$\hat{\beta_2}=6.932*10^7$;\\
+$\hat{\beta_3}=-5.698*10^5$;\\
+$\hat{\beta_4}=-3.018*10^5$;\\
+$\hat{\beta_5}=1.271*10^5$.\\
+
+Thus,instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
+
+\subsection{Anisotropy}\label{sec:anis}
+Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance. \\
+
+To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different direction are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the direction plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{dir_semi.png}
+		\caption{Directional Semivariance Plots\label{fig:dir_semi}}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{esc.png}
+		\caption{Empirical Semivariogram Contour plot\label{fig:esc}}
+\end{figure}
+\FloatBarrier
+
+
 
 
 	\section{Conclusion}\label{sec:con}

@@ -1,8 +1,0 @@
-color: relative population density at each time period
-
-Just some heads up plots that shows how spatial pattern of population density change overtime. 
-people concentrated in the center area of Shanghai.
-
-This is just a heads up, we can do something more together! :)
-
-

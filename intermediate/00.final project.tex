@@ -3,6 +3,7 @@
 \usepackage{amsmath, amsfonts, amssymb, mathrsfs}
 %\usepackage{dcolumn}
 \usepackage{natbib}
+%\usepackage{cite}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
 %\usepackage{caption}
@@ -11,6 +12,7 @@
 \usepackage{lscape}
 %\usepackage{hangcaption}
 \usepackage{multirow}
+\usepackage{placeins} % for floatbarrier 
 \bibpunct{(}{)}{;}{a}{}{,}
 
 \oddsidemargin=0.25in
@@ -22,7 +24,8 @@
 
 \date{}
 \author{Wenyu Gao \& Danni Lu \\ Department of Statistics, Virginia Tech}
-\title{STAT 5544 Spatial Analysis Final Project \\ (Fall 2016) \\ Spatial Pattern of Population Movement Using Cellular Data }
+%\title{STAT 5544 Spatial Analysis Final Project \\ (Fall 2016)}
+\title{Spatial Pattern of Population Movement Using Cellular Data }
 
 \begin{document}
 	\maketitle
@@ -51,11 +54,13 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{area.png}
 		\caption{Study Area and Aggregation Grid \label{fig:area}}
 	\end{figure}
+\FloatBarrier
 	The accuracy of location information we get depends on the density of cell towers. Instead of accurate location of mobile phone users, cellular data recorded location of cell tower that is nearest to the mobile phone users. As we can see in Figure \ref{fig:tower}, cell towers are not evenly spaced. The density in the center area is higher than outer areas. As a result, the coverage area of each cellular tower is different. To simplify the situation, study area is partitioned into a 28*28 grid, each areal unit is one square kilometer. All cellular information from one areal unit is aggregated into one fictional cell tower in the geo-center of the areal unit (Figure \ref{fig:tower}). Hence, we have a regular point-referenced data to establish spatial model. In terms of study period, our goal is exploring spatial and temporal pattern of population in rush hours in the morning. Previous study shows typical morning rush hours for metropolitan CBDs are between 7:00 and 9:00 am. Therefore, we extract cellular data from 5:00 am to 10:00 am to cover this range.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{tower.png}
 		\caption{Original Cell Towers and Aggregated Cell Towers \label{fig:tower}}
 	\end{figure}
+	\FloatBarrier
 	
 	\section{Methodologies}\label{sec:meth}
 	Based on our data characteristics and aggregation methods, we treat our data as point-referenced data and apply the corresponding spatial theories for analysis. The whole analyzing process is as follows: We begin from exploratory analysis to check if there is any special structure of the data. Then followed by identification of spatial trend. We would like to analyze the data without spatial trends because this will reflect the intrinsic covariance structure of the data. After detrending, we will check for existence of anisotropy. Model fitting will be conducted after all these preliminary work has been done. Semivariogram fitting and likelihood fitting models are considered. Some model selection criteria are applied to select the best fit and predicted model. Last but not least, we will make inference on the predicted models.
@@ -102,10 +107,12 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{image.png}
 		\caption{Image Plots of Frequency by Hour \label{fig:image}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist.png}
 		\caption{Histograms of Frequency by Hour \label{fig:hist}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist_log.png}
 		\caption{Histograms of log-Frequency by Hour \label{fig:lghist}}
@@ -113,7 +120,6 @@ The spatial pattern of population density has a direct relationship with traffic
 
 	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD by time.
 	
-<<<<<<< HEAD
 	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed. From the histograms, we can see that frequency is in exponential shape with even steeper slope. A Gamma distribution may be more appropriate. A log transformation may not be very helpful.
 	
 	For the two covariates, they are also exponentially distributed. This indicates that more people are concentrated near metro lines and expressways.
@@ -121,8 +127,89 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{hist_x.png}
 		\caption{Histograms of Covariates \label{fig:histx}}
 	\end{figure}
+\FloatBarrier
 
-
+	\subsection{Spatial Trend}\label{sec:spatialtrend}
+	
+	In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side bar plot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude is shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As is shown, there is a curvature relationship between population density and two coordination variables. 
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{lat.png}
+		\caption{Population Density and Latitude\label{fig:lat}}
+	\end{figure}
+	\FloatBarrier
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{long.png}
+		\caption{Population Density and Longitude\label{fig:long}}
+	\end{figure}
+	\FloatBarrier
+	
+	Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, Covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help use find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals. 
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{boxcox.png}
+		\caption{Parameters for Box-Cox Transformation\label{fig:boxcox}}
+	\end{figure}
+	\FloatBarrier
+	
+	For both scenarios, stepwise selection is used for variable screening. Under AIC criterion, full model (Model \ref{mod:polyreg} ) is selected for its best performance.
+	
+	\begin{align}
+	\label{mod:polyreg}
+	Y(s_i)=\beta_0 +\beta_1x_{1i} +\beta_2x_{2i} +\beta_3x_{1i}^2 +\beta_4x_{2i}^2+\beta_5x_{1i}x_{2i}+\epsilon_i
+	\end{align}
+	where,\\
+	$Y(s_i)$ is population density at location $s_i$;\\
+	$x_{1i}$ is latitude of location $s_i$;\\
+	$x_{2i}$ is longitude of location $s_i$;\\
+	
+	
+	
+	For each hour, we remove the underlying spatial trend using polynomial regression model \ref{mod:polyreg} fitted above. By comparing two scenarios, we find that there is no observable improvement in detrending for log scale scenario while the improvement in residual for original scale scenario is obvious. As a result, we adopt the polynomial regression model in scenario one: population density as response. Part of our fitting results is show below as parameter estimates for $5:00-6:00$ am:\\
+	\indent $\hat{\beta_0}=-4.524*10^9$;\\
+	\indent$\hat{\beta_1}=2.018*10^7$;\\
+	\indent$\hat{\beta_2}=6.932*10^7$;\\
+	\indent$\hat{\beta_3}=-5.698*10^5$;\\
+	\indent$\hat{\beta_4}=-3.018*10^5$;\\
+	\indent$\hat{\beta_5}=1.271*10^5$.\\
+	Estimates for other time periods are shown in Appendices.\\
+	
+	As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendices.\\
+	
+	Thus,instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
+	
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{geo5.png}
+		\caption{Exploratory Plot before Detrending(5:00-6:00 am) \label{fig:geo5}}
+	\end{figure}
+	\FloatBarrier
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{gres5.png}
+		\caption{Exploratory Plot after Detrending(5:00-6:00 am)\label{fig:gres5}}
+	\end{figure}
+	\FloatBarrier
+	
+	
+	
+	\subsection{Isotropy}\label{sec:anis}
+	Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance. \\
+	
+	To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different direction are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the direction plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{dir_semi.png}
+		\caption{Directional Semivariance Plots\label{fig:dir_semi}}
+	\end{figure}
+	\FloatBarrier
+	
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{esc.png}
+		\caption{Empirical Semivariogram Contour plot\label{fig:esc}}
+	\end{figure}
+	\FloatBarrier
+	
 
 	\subsection{Model Fitting} \label{sec:resfit}
 	All preliminary work has been done. The next step is analyzing the processed data. Again, we start from visualization to study the intrinsic properties of the data.
@@ -130,11 +217,13 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{semi.png}
 		\caption{Semivariogram with Classical and Cressie Weight \label{fig:semi}}
 	\end{figure}
+\FloatBarrier
 	Figure \ref{fig:semi} shows the semivariogram by time. There is obvious difference between the classical and Cressie weights, especially in 8-9 and 9-10 time period. As the scale is quite large, the difference is severe. Since Cressie weight is more robust, which can also be seen from plots, Cressie weight is used in the analysis.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semi_full.png}
 		\caption{Semivariogram with All Time in One \label{fig:semi_one}}
 	\end{figure}
+\FloatBarrier
 	Figure \ref{fig:semi_one} further convinces our induction in Section \ref{sec:meth} in that the semivariogram becomes decreasing after 0.1. We select 0.15 as our largest distance in further analysis as 0.15 corresponding to a roughly 14km. In addition, Figure \ref{fig:semi_one} also shows that the variance is increasing by time. The curves are more steady in earlier times while change severely at later times. This implies a trend from homogeneity to heterogeneity.
 	
 	\subsubsection{Semivario Fitting}
@@ -191,10 +280,12 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{dist2metro.png}
 		\caption{Relationship of Frequency on Distance2Metro \label{fig:disme}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{dist2express.png}
 		\caption{Relationship of Frequency on Distance2Expressway \label{fig:disex}}
 	\end{figure}
+\FloatBarrier
 	
 	Distances to transportation corridors have impact on population density with the smaller the distance, the larger the density. Also, as time increases, the population density also increases and the increase is more concentrated with shorter distances. Thus we conclude that the closer to transportation corridors, the more people. In addition, as time goes by, more people are gathering towards the metros or expressways.
 	
@@ -228,20 +319,27 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{prediction_at_5.png}
 		\caption{Comparison between True Model and Predicted Models \label{fig:pred5}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{pred_result_total.png}
 		\caption{Summary of Residual Sum of Squares between True Model and Predicted Models \label{fig:predsum}}
 	\end{figure}
+\FloatBarrier
 
 	 Although in each individual fitting, empirical methods fit better than likelihood fitting (see Figure \ref{fig:semsph} and Figure \ref{fig:likexp} in Appendix), for predicted models, the likelihood models are better than empirical fittings.
 	 \begin{figure}[!ht]
 	 	\includegraphics[width=\textwidth]{pred_exp.png}
 	 	\caption{Predictions with Exponential Likelihood Models by Hour \label{fig:predexp}}
 	 \end{figure}
+ \FloatBarrier
  
 	 Figure \ref{fig:predexp} displays predictions over time from likelihood fitted models with exponential covariance. It is clear that population movement is along transportation corridors.
 
 	\section{Conclusion}\label{sec:con}
+	Nowadays, urban planners are facing with more challenges to adapt to rapid growth of modern metropolitan and urban dynamics. Effectively responding to urban problems such as congestion and stampede is more emphasized than ever before. Cellular data provides a promising solution for such problems for its effectiveness and high resolution. In this paper, we propose a method to demonstrate the spatial and temporal characteristics of population movement both quantitatively and qualitatively, based on cellular data.
+	
+	In this study, we aggregated our data on an hourly basis, and this avoids us to obtain any further conclusion of higher accuracy in terms of time and population density. In the future, we plan to aggregate the data with higher resolution to make more detailed conclusion.
+	
 	This paper analyzes population movement in Shanghai during morning peak hours on a typical weekday using point-referenced data models in spatial analysis. Based on our study, especially the prediction plots, we have several findings:
 	\begin{itemize}
 		\item People are gathering towards CBD area by time;
@@ -259,9 +357,11 @@ The spatial pattern of population density has a direct relationship with traffic
 		\item Fourth, a spatio-temporal model may be considered instead of looking at the trend by time from plots.
 		\item Fifth, When making predictions, a leave-one-out cross validation may be applied to get a more accurate prediction.
 	\end{itemize}
+\cite{khan2013mobile}
 	
 	\section{Reference}\label{sec:ref}
-	\bibliography{sample}
+	\bibliography{ref}
+	\bibliographystyle{plain}
 	
 	\clearpage
 	\appendix
@@ -270,90 +370,132 @@ The spatial pattern of population density has a direct relationship with traffic
 		\includegraphics[width=\textwidth]{persp.png}
 		\caption{Perspective Plot of Frequency by Hour \label{fig:perp}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{box.png}
 		\caption{Boxplots of Frequency by Hour \label{fig:boxplot}}
-<<<<<<< HEAD
 	\end{figure}
-	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{qq.png}
-		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
-=======
-	\end{figure}
-	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{qq.png}
-		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
-	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{box_log.png}
 		\caption{Boxplots of log-Frequency by Hour \label{fig:lgboxplot}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{qq.png}
-		\caption{QQ-Plots of log-Frequency by Hour \label{fig:lgqq}}
->>>>>>> origin/master
+		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{box_log.png}
-		\caption{Boxplots of log-Frequency by Hour \label{fig:lgboxplot}}
-	\end{figure}
-	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{qq.png}
+		\includegraphics[width=\textwidth]{qq_log.png}
 		\caption{QQ-Plots of log-Frequency by Hour \label{fig:lgqq}}
 	\end{figure}
+\FloatBarrier
+	\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{geo6.png}
+	\caption{Exploratory Plot before Detrending(6:00-7:00 am) \label{fig:geo6}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{gres6.png}
+	\caption{Exploratory Plot after Detrending(6:00-7:00 am)\label{fig:gres6}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{geo7.png}
+	\caption{Exploratory Plot before Detrending(7:00-8:00 am) \label{fig:geo7}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{gres7.png}
+	\caption{Exploratory Plot after Detrending(7:00-8:00 am)\label{fig:gres7}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{geo8.png}
+	\caption{Exploratory Plot before Detrending(8:00-9:00 am) \label{fig:geo8}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{gres8.png}
+	\caption{Exploratory Plot after Detrending(8:00-9:00 am)\label{fig:gres8}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{geo9.png}
+	\caption{Exploratory Plot before Detrending(9:00-10:00 am) \label{fig:geo9}}
+\end{figure}
+\FloatBarrier
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{gres9.png}
+	\caption{Exploratory Plot after Detrending(9:00-10:00 am)\label{fig:gres9}}
+\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_spherical.png}
 		\caption{Empirical Fitted Model with Spherical Covariance \label{fig:semsph}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_exponential.png}
 		\caption{Empirical Fitted Model with Exponential Covariance \label{fig:semexp}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_gaussian.png}
 		\caption{Empirical Fitted Model with Gaussian Covariance \label{fig:semgau}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_cubic.png}
 		\caption{Empirical Fitted Model with Cubic Covariance \label{fig:semcub}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_matern.png}
 		\caption{Empirical Fitted Model with Matern Covariance \label{fig:semmat}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_circular.png}
 		\caption{Empirical Fitted Model with Circular Covariance \label{fig:semcirh}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_power.png}
 		\caption{Empirical Fitted Model with Power Covariance \label{fig:sempow}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semfit_poweredexp.png}
 		\caption{Empirical Fitted Model with Power Exponential Covariance \label{fig:sempex}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lik_spherical.png}
 		\caption{Likelihood Fitted Model with Spherical Covariance \label{fig:liksph}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lik_exponential.png}
 		\caption{Likelihood Fitted Model with Exponential Covariance \label{fig:likexp}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lik_gaussian.png}
 		\caption{Likelihood Fitted Model with Gaussian Covariance \label{fig:likgau}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lik_cubic.png}
 		\caption{Likelihood Fitted Model with Cubic Covariance \label{fig:likcub}}
 	\end{figure}
+\FloatBarrier
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lik_matern.png}
 		\caption{Likelihood Fitted Model with Matern Covariance \label{fig:likmat}}
 	\end{figure}
-	
+	\FloatBarrier
 
 	
 	\clearpage

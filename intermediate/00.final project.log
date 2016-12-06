@@ -1,13 +1,24 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.5)  5 DEC 2016 22:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.13)  6 DEC 2016 11:47
 entering extended mode
-**"./00.final project.tex"
-("00.final project.tex"
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+**00.final*project.tex
+
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -22,80 +33,80 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 147.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/06/28 v2.15d AMS math features
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2000/06/29 v2.01
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
-File: amsgen.sty 1999/11/30 v2.0 generic functions
+File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
-Package: amsopn 2016/03/08 v2.02 operator names
+Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 199.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 297.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 394.
-LaTeX Info: Redefining \dots on input line 397.
-LaTeX Info: Redefining \cdots on input line 518.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen107
-LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -116,8 +127,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2739.
-LaTeX Info: Redefining \] on input line 2740.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -133,14 +144,14 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-(C:\Users\dlu\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip46
 \bibsep=\skip47
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count100
 )
-(C:\Users\dlu\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyvrb\fancyvrb.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -153,100 +164,101 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@OutFile=\write3
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen114
 \Hy@linkcounter=\count104
 \Hy@pagecounter=\count105
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count106
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4486.
-Package hyperref Info: Link nesting OFF on input line 4491.
-Package hyperref Info: Hyper index ON on input line 4494.
-Package hyperref Info: Plain pages OFF on input line 4501.
-Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
+Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count107
 
-(C:\Users\dlu\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5088.
+LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen115
 \Fld@menulength=\count108
 \Field@Width=\dimen116
 \Fld@charsize=\dimen117
-Package hyperref Info: Hyper figures OFF on input line 6342.
-Package hyperref Info: Link nesting OFF on input line 6347.
-Package hyperref Info: Hyper index ON on input line 6350.
-Package hyperref Info: backreferencing OFF on input line 6357.
-Package hyperref Info: Link coloring OFF on input line 6362.
-Package hyperref Info: Link coloring with OCG OFF on input line 6367.
-Package hyperref Info: PDF/A mode OFF on input line 6372.
-LaTeX Info: Redefining \ref on input line 6412.
-LaTeX Info: Redefining \pageref on input line 6416.
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
 \Hy@abspage=\count109
 \c@Item=\count110
 \c@Hfootnote=\count111
@@ -255,12 +267,12 @@ LaTeX Info: Redefining \pageref on input line 6416.
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count112
 \c@bookmark@seq@number=\count113
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
@@ -270,84 +282,72 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-Package: multirow 2016/10/11 v2.1 Span multiple rows of a table
-\multirow@colwidth=\skip49
-\multirow@cnta=\count114
-\multirow@cntb=\count115
-\multirow@dima=\skip50
 \bigstrutjot=\dimen118
 )
-No file "00.final project".aux.
-\openout1 = `"00.final project.aux"'.
+("C:\Program Files\MiKTeX 2.9\tex\latex\placeins\placeins.sty"
+Package: placeins 2005/04/18  v 2.2
+)
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-(C:\Users\dlu\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
+\scratchcounter=\count114
 \scratchdimen=\dimen119
 \scratchbox=\box29
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count115
+\nofMParguments=\count116
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count119
+\MPscratchCnt=\count117
 \MPscratchDim=\dimen120
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks21
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 27.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package hyperref Info: Link coloring OFF on input line 30.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count122
+\c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
-\@outlinefile=\write4
-\openout4 = `"00.final project.out"'.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.out")
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.out")
+\@outlinefile=\write4
+LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 29.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -355,174 +355,474 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
  [1
 
-{C:/Users/dlu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no © in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
- [2]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-
-LaTeX Warning: Reference `fig:area' on page 3 undefined on input line 51.
-
-<area.png, id=19, 781.41937pt x 443.40656pt>
+<area.png, id=95, 781.41937pt x 443.40656pt>
 File: area.png Graphic file (type png)
  <use area.png>
-Package pdftex.def Info: area.png used on input line 53.
+Package pdftex.def Info: area.png used on input line 54.
 (pdftex.def)             Requested size: 433.62pt x 246.05295pt.
-
-
-LaTeX Warning: Reference `fig:tower' on page 3 undefined on input line 56.
-
-
-LaTeX Warning: Reference `fig:tower' on page 3 undefined on input line 56.
-
-<tower.png, id=21, 763.35187pt x 393.72093pt>
+ [2]
+<tower.png, id=103, 763.35187pt x 393.72093pt>
 File: tower.png Graphic file (type png)
  <use tower.png>
-Package pdftex.def Info: tower.png used on input line 58.
+Package pdftex.def Info: tower.png used on input line 60.
 (pdftex.def)             Requested size: 433.62pt x 223.64827pt.
- [3] [4 <./area.png>]
-
-LaTeX Warning: Reference `tbl:sumdata' on page 5 undefined on input line 69.
-
-
-LaTeX Warning: Reference `fig:image' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:perp' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `sec:appa' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:hist' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:boxplot' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `sec:appa' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:qq' on page 5 undefined on input line 97.
-
-
-LaTeX Warning: Reference `sec:appa' on page 5 undefined on input line 97.
-
-<image.png, id=34, 531.48563pt x 362.10281pt>
+ [3 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/area.png>] [4 <C:/Users/gaocy/Docu
+ments/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_
+Project/intermediate/tower.png>] <image.png, id=125, 531.48563pt x 362.10281pt>
 File: image.png Graphic file (type png)
  <use image.png>
-Package pdftex.def Info: image.png used on input line 99.
+Package pdftex.def Info: image.png used on input line 107.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<hist.png, id=35, 531.48563pt x 362.10281pt>
+[5] <hist.png, id=136, 531.48563pt x 362.10281pt>
 File: hist.png Graphic file (type png)
  <use hist.png>
-Package pdftex.def Info: hist.png used on input line 103.
+Package pdftex.def Info: hist.png used on input line 112.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<hist_log.png, id=36, 531.48563pt x 362.10281pt>
+<hist_log.png, id=137, 531.48563pt x 362.10281pt>
 File: hist_log.png Graphic file (type png)
  <use hist_log.png>
-Package pdftex.def Info: hist_log.png used on input line 107.
+Package pdftex.def Info: hist_log.png used on input line 117.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [6 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/image.png> <C:/Users/gaocy/Documen
+ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
+ject/intermediate/hist.png>] <hist_x.png, id=145, 469.755pt x 318.43968pt>
+File: hist_x.png Graphic file (type png)
+
+<use hist_x.png>
+Package pdftex.def Info: hist_x.png used on input line 127.
+(pdftex.def)             Requested size: 433.62pt x 293.94472pt.
+ [7 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/hist_log.png>]
+<lat.png, id=155, 531.48563pt x 362.10281pt>
+File: lat.png Graphic file (type png)
+ <use lat.png>
+Package pdftex.def Info: lat.png used on input line 137.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [8 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/hist_x.png>]
+<long.png, id=163, 531.48563pt x 362.10281pt>
+File: long.png Graphic file (type png)
+ <use long.png>
+Package pdftex.def Info: long.png used on input line 143.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
+<boxcox.png, id=165, 531.48563pt x 362.10281pt>
+File: boxcox.png Graphic file (type png)
+ <use boxcox.png>
+Package pdftex.def Info: boxcox.png used on input line 150.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [9 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/lat.png> <C:/Users/gaocy/Documents
+/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proje
+ct/intermediate/long.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
 
-LaTeX Warning: Reference `fig:lghist' on page 5 undefined on input line 113.
+ []
 
-[5 <./tower.png>]
-No file "00.final project".bbl.
-[6 <./image.png>]
 
-LaTeX Warning: Text page 7 contains only floats.
+Underfull \hbox (badness 10000) in paragraph at lines 168--176
 
-[7 <./hist.png> <./hist_log.png>] [8]
-<persp.png, id=67, 531.48563pt x 362.10281pt>
+ []
+
+[10 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/boxcox.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
+
+ []
+
+<geo5.png, id=188, 531.48563pt x 362.10281pt>
+File: geo5.png Graphic file (type png)
+ <use geo5.png>
+Package pdftex.def Info: geo5.png used on input line 183.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<gres5.png, id=189, 531.48563pt x 362.10281pt>
+File: gres5.png Graphic file (type png)
+ <use gres5.png>
+Package pdftex.def Info: gres5.png used on input line 189.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [11 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/geo5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+<dir_semi.png, id=199, 531.48563pt x 362.10281pt>
+File: dir_semi.png Graphic file (type png)
+ <use dir_semi.png>
+Package pdftex.def Info: dir_semi.png used on input line 202.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [12 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/gres5.png>]
+<esc.png, id=207, 531.48563pt x 362.10281pt>
+File: esc.png Graphic file (type png)
+ <use esc.png>
+Package pdftex.def Info: esc.png used on input line 208.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<semi.png, id=208, 531.48563pt x 362.10281pt>
+File: semi.png Graphic file (type png)
+ <use semi.png>
+Package pdftex.def Info: semi.png used on input line 217.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [13 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/dir_semi.png> <C:/Users/gaocy/Doc
+uments/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial
+_Project/intermediate/esc.png>] <semi_full.png, id=217, 531.48563pt x 362.10281
+pt>
+File: semi_full.png Graphic file (type png)
+
+<use semi_full.png>
+Package pdftex.def Info: semi_full.png used on input line 223.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [14 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/semi.png>]
+Overfull \hbox (57.21756pt too wide) in paragraph at lines 236--250
+ [][] 
+ []
+
+
+Overfull \hbox (39.25803pt too wide) in paragraph at lines 259--275
+ [][] 
+ []
+
+[15 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/semi_full.png>]
+<dist2metro.png, id=242, 648.17157pt x 602.25pt>
+File: dist2metro.png Graphic file (type png)
+ <use dist2metro.png>
+Package pdftex.def Info: dist2metro.png used on input line 280.
+(pdftex.def)             Requested size: 433.62pt x 402.89888pt.
+ [16]
+<dist2express.png, id=250, 648.17157pt x 602.25pt>
+File: dist2express.png Graphic file (type png)
+ <use dist2express.png>
+Package pdftex.def Info: dist2express.png used on input line 285.
+(pdftex.def)             Requested size: 433.62pt x 402.89888pt.
+
+[17 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/dist2metro.png>] [18 <C:/Users/gao
+cy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/S
+patial_Project/intermediate/dist2express.png>]
+<prediction_at_5.png, id=268, 531.48563pt x 362.10281pt>
+File: prediction_at_5.png Graphic file (type png)
+
+<use prediction_at_5.png>
+Package pdftex.def Info: prediction_at_5.png used on input line 319.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [19
+
+]
+<pred_result_total.png, id=278, 236.38312pt x 105.39375pt>
+File: pred_result_total.png Graphic file (type png)
+
+<use pred_result_total.png>
+Package pdftex.def Info: pred_result_total.png used on input line 324.
+(pdftex.def)             Requested size: 433.62pt x 193.33984pt.
+ <pred_exp.png, id=281, 694.84593pt x 390.70969pt>
+File: pred_exp.png Graphic file (type png)
+
+<use pred_exp.png>
+Package pdftex.def Info: pred_exp.png used on input line 331.
+(pdftex.def)             Requested size: 433.62pt x 243.82332pt.
+ [20 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/prediction_at_5.png> <C:/Users/ga
+ocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/
+Spatial_Project/intermediate/pred_result_total.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 345.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 345.
+ [21 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/pred_exp.png>]
+
+Package natbib Warning: Citation `khan2013mobile' on page 22 undefined on input
+ line 360.
+
+
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.bbl") [22]
+<persp.png, id=304, 531.48563pt x 362.10281pt>
 File: persp.png Graphic file (type png)
  <use persp.png>
-Package pdftex.def Info: persp.png used on input line 125.
+Package pdftex.def Info: persp.png used on input line 370.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<box.png, id=68, 531.48563pt x 362.10281pt>
+<box.png, id=305, 531.48563pt x 362.10281pt>
 File: box.png Graphic file (type png)
  <use box.png>
-Package pdftex.def Info: box.png used on input line 129.
+Package pdftex.def Info: box.png used on input line 375.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [23
 
-<qq.png, id=69, 531.48563pt x 362.10281pt>
-File: qq.png Graphic file (type png)
- <use qq.png>
-Package pdftex.def Info: qq.png used on input line 133.
-(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
-
-<box_log.png, id=70, 531.48563pt x 362.10281pt>
+ <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatis
+tics/spatial/Spatial_Project/intermediate/persp.png>]
+<box_log.png, id=311, 531.48563pt x 362.10281pt>
 File: box_log.png Graphic file (type png)
  <use box_log.png>
-Package pdftex.def Info: box_log.png used on input line 137.
+Package pdftex.def Info: box_log.png used on input line 380.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<qq.png, id=312, 531.48563pt x 362.10281pt>
 File: qq.png Graphic file (type png)
  <use qq.png>
-Package pdftex.def Info: qq.png used on input line 141.
+Package pdftex.def Info: qq.png used on input line 385.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+ [24 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/box.png> <C:/Users/gaocy/Document
+s/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proj
+ect/intermediate/box_log.png>] <qq_log.png, id=320, 531.48563pt x 362.10281pt>
+File: qq_log.png Graphic file (type png)
+ <use qq_log.png>
+Package pdftex.def Info: qq_log.png used on input line 390.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[9 <./persp.png>]
+<geo6.png, id=321, 531.48563pt x 362.10281pt>
+File: geo6.png Graphic file (type png)
+ <use geo6.png>
+Package pdftex.def Info: geo6.png used on input line 395.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [25 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/qq.png> <C:/Users/gaocy/Documents
+/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proje
+ct/intermediate/qq_log.png>] <gres6.png, id=330, 531.48563pt x 362.10281pt>
+File: gres6.png Graphic file (type png)
+ <use gres6.png>
+Package pdftex.def Info: gres6.png used on input line 400.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-LaTeX Warning: Text page 10 contains only floats.
+<geo7.png, id=331, 531.48563pt x 362.10281pt>
+File: geo7.png Graphic file (type png)
+ <use geo7.png>
+Package pdftex.def Info: geo7.png used on input line 405.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [26 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/geo6.png> <C:/Users/gaocy/Documen
+ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
+ject/intermediate/gres6.png>] <gres7.png, id=340, 531.48563pt x 362.10281pt>
+File: gres7.png Graphic file (type png)
+ <use gres7.png>
+Package pdftex.def Info: gres7.png used on input line 410.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[10 <./box.png> <./qq.png>]
+<geo8.png, id=341, 531.48563pt x 362.10281pt>
+File: geo8.png Graphic file (type png)
+ <use geo8.png>
+Package pdftex.def Info: geo8.png used on input line 415.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [27 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/geo7.png> <C:/Users/gaocy/Documen
+ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
+ject/intermediate/gres7.png>] <gres8.png, id=350, 531.48563pt x 362.10281pt>
+File: gres8.png Graphic file (type png)
+ <use gres8.png>
+Package pdftex.def Info: gres8.png used on input line 420.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-LaTeX Warning: Text page 11 contains only floats.
+<geo9.png, id=351, 531.48563pt x 362.10281pt>
+File: geo9.png Graphic file (type png)
+ <use geo9.png>
+Package pdftex.def Info: geo9.png used on input line 425.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [28 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/geo8.png> <C:/Users/gaocy/Documen
+ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
+ject/intermediate/gres8.png>] <gres9.png, id=360, 531.48563pt x 362.10281pt>
+File: gres9.png Graphic file (type png)
+ <use gres9.png>
+Package pdftex.def Info: gres9.png used on input line 430.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[11 <./box_log.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
- ("00.final project.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+<semfit_spherical.png, id=361, 531.48563pt x 362.10281pt>
+File: semfit_spherical.png Graphic file (type png)
+
+<use semfit_spherical.png>
+Package pdftex.def Info: semfit_spherical.png used on input line 435.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [29 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/geo9.png> <C:/Users/gaocy/Documen
+ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
+ject/intermediate/gres9.png>]
+<semfit_exponential.png, id=370, 531.48563pt x 362.10281pt>
+File: semfit_exponential.png Graphic file (type png)
+
+<use semfit_exponential.png>
+Package pdftex.def Info: semfit_exponential.png used on input line 440.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<semfit_gaussian.png, id=371, 531.48563pt x 362.10281pt>
+File: semfit_gaussian.png Graphic file (type png)
+
+<use semfit_gaussian.png>
+Package pdftex.def Info: semfit_gaussian.png used on input line 445.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+ [30 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+atistics/spatial/Spatial_Project/intermediate/semfit_spherical.png> <C:/Users/g
+aocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial
+/Spatial_Project/intermediate/semfit_exponential.png>] <semfit_cubic.png, id=37
+9, 531.48563pt x 362.10281pt>
+File: semfit_cubic.png Graphic file (type png)
+ <use semfit_cubic.png>
+Package pdftex.def Info: semfit_cubic.png used on input line 450.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<semfit_matern.png, id=380, 531.48563pt x 362.10281pt>
+File: semfit_matern.png Graphic file (type png)
+ <use semfit_matern.png>
+Package pdftex.def Info: semfit_matern.png used on input line 455.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+[31 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/semfit_gaussian.png> <C:/Users/gao
+cy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/S
+patial_Project/intermediate/semfit_cubic.png>]
+<semfit_circular.png, id=390, 531.48563pt x 362.10281pt>
+File: semfit_circular.png Graphic file (type png)
+
+<use semfit_circular.png>
+Package pdftex.def Info: semfit_circular.png used on input line 460.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<semfit_power.png, id=391, 531.48563pt x 362.10281pt>
+File: semfit_power.png Graphic file (type png)
+ <use semfit_power.png>
+Package pdftex.def Info: semfit_power.png used on input line 465.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+[32 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/semfit_matern.png> <C:/Users/gaocy
+/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spa
+tial_Project/intermediate/semfit_circular.png>]
+<semfit_poweredexp.png, id=400, 531.48563pt x 362.10281pt>
+File: semfit_poweredexp.png Graphic file (type png)
+
+<use semfit_poweredexp.png>
+Package pdftex.def Info: semfit_poweredexp.png used on input line 470.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<lik_spherical.png, id=401, 531.48563pt x 362.10281pt>
+File: lik_spherical.png Graphic file (type png)
+ <use lik_spherical.png>
+Package pdftex.def Info: lik_spherical.png used on input line 475.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+[33 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/semfit_power.png> <C:/Users/gaocy/
+Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spat
+ial_Project/intermediate/semfit_poweredexp.png>]
+<lik_exponential.png, id=410, 531.48563pt x 362.10281pt>
+File: lik_exponential.png Graphic file (type png)
+
+<use lik_exponential.png>
+Package pdftex.def Info: lik_exponential.png used on input line 480.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<lik_gaussian.png, id=411, 531.48563pt x 362.10281pt>
+File: lik_gaussian.png Graphic file (type png)
+ <use lik_gaussian.png>
+Package pdftex.def Info: lik_gaussian.png used on input line 485.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+[34 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/lik_spherical.png> <C:/Users/gaocy
+/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spa
+tial_Project/intermediate/lik_exponential.png>]
+<lik_cubic.png, id=419, 531.48563pt x 362.10281pt>
+File: lik_cubic.png Graphic file (type png)
+ <use lik_cubic.png>
+Package pdftex.def Info: lik_cubic.png used on input line 490.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+<lik_matern.png, id=420, 531.48563pt x 362.10281pt>
+File: lik_matern.png Graphic file (type png)
+ <use lik_matern.png>
+Package pdftex.def Info: lik_matern.png used on input line 495.
+(pdftex.def)             Requested size: 433.62pt x 295.4344pt.
+
+[35 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+tistics/spatial/Spatial_Project/intermediate/lik_gaussian.png> <C:/Users/gaocy/
+Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spat
+ial_Project/intermediate/lik_cubic.png>] [36 <C:/Users/gaocy/Documents/useful/s
+tudy/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Project/interm
+ediate/lik_matern.png>] [37
+
+] [38] [39] [40] [41
+
+]
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 877.
+[42
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 877.
+
+("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
+tics\spatial\Spatial_Project\intermediate\00.final project.aux"
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
 
 
-Package rerunfilecheck Warning: File `"00.final project".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+! Package natbib Error: Bibliography not compatible with author-year citations.
 
-Package rerunfilecheck Info: Checksums for `"00.final project".out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  F02149338DCD089BC2CC29E5DA5C8FCF;476.
-
-LaTeX Warning: There were undefined references.
+(natbib)                Press <return> to continue in numerical citation style.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.197 ...and\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+Check the bibliography entries for non-compliant syntax,
+or select author-year BibTeX style, e.g. plainnat
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 150.
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 877.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 877.
+Package rerunfilecheck Info: File `00.final*project.out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 877.
  ) 
 Here is how much of TeX's memory you used:
- 6865 strings out of 493333
- 98096 string characters out of 3139200
- 192442 words of memory out of 3000000
- 10280 multiletter control sequences out of 15000+200000
- 14529 words of font info for 58 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 29i,9n,31p,1989b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 7118 strings out of 493921
+ 102545 string characters out of 3147282
+ 216977 words of memory out of 3000000
+ 10148 multiletter control sequences out of 15000+200000
+ 14876 words of font info for 59 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 29i,10n,31p,1111b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr17.pfb>
-Output written on "00.final project.pdf" (11 pages, 772768 bytes).
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "00.final project.pdf" (42 pages, 1592528 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

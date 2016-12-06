@@ -37,18 +37,18 @@
 	\textbf{ {\em Key words}}: Cellular Data, Likelihood, Periodical Traffic, Population Movement, Semivariogram, Spatial Analysis.
 	
 	\section{Introduction}\label{sec:intro}
-	Worldwide, urban population has been growing steadily during the past decades, from 33.56\% of the world's population in 1960 to 53.86\% in 2015. In developed countries, the proportion is even higher. 82\% of total population in United States was from urban areas in 2015(World Bank, 2015). As increasing number of people are living in urban areas, the rising issues such as limited land resource and deteriorating recurrent traffic congestion are repeatedly emphasized by transportation planning institutes. One of the major causes of recurrent traffic congestion is high intensity development in districts where the traffic attraction exceeds the accommodation volume of traffic system. Central Business District (CBD) is therefore becoming the key area to congestion solution as it has been bringing remarkable pressure to transportation system during peak hours on weekdays due to their high traffic attraction (Willett K, 2006). 
+	Worldwide, urban population has been growing steadily during the past decades, from 33.56\% of the world's population in 1960 to 53.86\% in 2015. In developed countries, the proportion is even higher. 82\% of total population in United States was from urban areas in 2015(World Bank, 2015). As increasing number of people are living in urban areas, the rising issues such as limited land resource and deteriorating recurrent traffic congestion are repeatedly emphasized by transportation planning institutes. One of the major causes of recurrent traffic congestion is high intensity development in districts where the traffic attraction exceeds the accommodation volume of traffic system. Central Business District (CBD) is therefore becoming the key area to congestion solution as it has been bringing remarkable pressure to transportation system during peak hours on weekdays due to their high traffic attraction (Willett K, 2006). \\
 	
-	Central Business District (CBD) is a major destination for urban area. According to a traffic survey of 63 cities in US in the 1950s, about one in every five metropolitan residents has at least one destination in the CBD during each weekday (Foley D L, 1952). Integration of multiple services within a small area is convenient not only for people living in the vicinity but also for people living elsewhere in the city. However, the price to pay is that area with higher developing density requires transportation system with larger capacity during peak hours (Mindali O, 2004), especially in big metropolitan like New York, Sydney and Shanghai. As a consequence, traffic congestion in CBD areas has become a bottleneck for every growing metropolitan to serve better city life.
+	Central Business District (CBD) is a major destination for urban area. According to a traffic survey of 63 cities in US in the 1950s, about one in every five metropolitan residents has at least one destination in the CBD during each weekday (Foley D L, 1952). Integration of multiple services within a small area is convenient not only for people living in the vicinity but also for people living elsewhere in the city. However, the price to pay is that area with higher developing density requires transportation system with larger capacity during peak hours (Mindali O, 2004), especially in big metropolitan like New York, Sydney and Shanghai. As a consequence, traffic congestion in CBD areas has become a bottleneck for every growing metropolitan to serve better city life.\\
 	
-	Researchers have been seeking for solutions to alleviating recurrent traffic congestion for years. Sufficient work has been done on analyzing spatial and temporal characteristic of travel behavior during peak hours. Traditional method to acquire travel pattern information is to conduct household survey, which is usually inefficient and expensive. Nowadays, high density of cellular towers and deep penetration of wireless service provides us with detailed travel information with high accuracy in precise timings. Previous studies have shown a promising future of mobile data in exploring commuting traffic. Compared with traditional way of exploring travel pattern, cellular data stands out for wider coverage area, better representative of population with all kinds of travel pattern, and more detailed information with high accuracy and precise timing. Thus, cellular data allows us to study temporal and spatial travel characteristics of higher graininess. 
+	Researchers have been seeking for solutions to alleviating recurrent traffic congestion for years. Sufficient work has been done on analyzing spatial and temporal characteristic of travel behavior during peak hours. Traditional method to acquire travel pattern information is to conduct household survey, which is usually inefficient and expensive. Nowadays, high density of cellular towers and deep penetration of wireless service provides us with detailed travel information with high accuracy in precise timings. Previous studies have shown a promising future of mobile data in exploring commuting traffic. Compared with traditional way of exploring travel pattern, cellular data stands out for wider coverage area, better representative of population with all kinds of travel pattern, and more detailed information with high accuracy and precise timing. Thus, cellular data allows us to study temporal and spatial travel characteristics of higher graininess. \\
 	
 	Midtown in Shanghai is one of the largest central business districts in the world, which makes it a suitable place to study travel pattern related to CBD. Based on cellular data collected in Shanghai, we're going to discuss spatial and temporal characteristics of travel pattern related to CBD in Shanghai. In this study, we treat the study area as a continuous field. In section \ref{sec:data}, we give a brief introduction of our data, the goal of our study, and make some exploratory analysis to prepare spatial data for modeling. In section \ref{sec:meth}, we introduce the methodology adopted to build, evaluate and apply the spatial models we fit. Afterwards, we demonstrate and discuss the results of our empirical study, model fitting and prediction in section \ref{sec:res}. At last, conclusions are drawn from the results and discussion in section \ref{sec:con}. 	
 	
 	\section{Data Description}\label{sec:data}
-We collected geodetic position information of all users in Shanghai from China Mobile for a continuous 24-hour period. China Mobile is the biggest carrier in China, with 64\% total ownership in China (China Mobile, China Unicom and China Telecom, 2016). The dataset includes coded mobile phone ID, date, time, latitude and longitude of corresponding cellular tower. Cellular towers are infrastructure that enables voice and data services for mobile phones. They operate in different radio frequencies, and allow users to maintain their connections while traveling from one base station to another. In total, we collected more than 1.1 billion cell tower hands-off records. These records are from 37,450 different cell towers all over Shanghai with average density of 5.91 cell tower per kilometer square.
+We collected geodetic position information of all users in Shanghai from China Mobile for a continuous 24-hour period. China Mobile is the biggest carrier in China, with 64\% total ownership in China (China Mobile, China Unicom and China Telecom, 2016). The dataset includes coded mobile phone ID, date, time, latitude and longitude of corresponding cellular tower. Cellular towers are infrastructure that enables voice and data services for mobile phones. They operate in different radio frequencies, and allow users to maintain their connections while traveling from one base station to another. In total, we collected more than 1.1 billion cell tower hands-off records. These records are from 37,450 different cell towers all over Shanghai with average density of 5.91 cell tower per kilometer square.\\
 
-One issue of adopting cellular data is privacy of participants (Steenbruggen, John, 2013). To protect their privacy, all records are anonymized and replaced by an identifier ID before we got access to it. In addition, records were aggregated by areal unit and time period before analyzing and visualizing. No personal information is involved and displayed in the research.
+One issue of adopting cellular data is privacy of participants (Steenbruggen, John, 2013). To protect their privacy, all records are anonymized and replaced by an identifier ID before we got access to it. In addition, records were aggregated by areal unit and time period before analyzing and visualizing. No personal information is involved and displayed in the research.\\
 
 The spatial pattern of population density has a direct relationship with traffic demand.  Every morning on weekday, metropolitan sees a population movement from every corner of the city to CBD areas. During peak hours, the traffic on roads and crowding transport is at its highest. The huge increment of population brings tremendous pressure to transportation system near CBD areas. In traditional traffic survey, no standard areal definition of CBD was followed (Foley D L., 1952). Though the importance of CBD in transportation is self-evident, it is much more of a general concept in transportation study. Luckily, the comprehensive information of cellular data provides us a way to identify CBD by its transportation characteristics. In this study, we focus on main districts that are circled by Outer Expressway in Shanghai (Figure \ref{fig:area}).
 	\begin{figure}[!ht]
@@ -64,7 +64,7 @@ The spatial pattern of population density has a direct relationship with traffic
 	\FloatBarrier
 	
 	\section{Methodologies}\label{sec:meth}
-	Based on our data characteristics and aggregation methods, we treat our data as point-referenced data and apply the corresponding spatial theories for analysis. The whole analyzing process is as follows: We begin from exploratory analysis to check if there is any special structure of the data, followed by identification of spatial trend. We would like to analyze the data without spatial trends because this will reflect the intrinsic covariance structure of the data. After detrending, we will check for existence of anisotropy. Model fitting will be conducted after all these preliminary work has been done. Semivariogram fitting and likelihood fitting models are considered. Some model selection criteria are applied to select the best fit and predicted model. Last but not least, we will make inference on the predicted models.
+	Based on our data characteristics and aggregation methods, we treat our data as point-referenced data and apply the corresponding spatial theories for analysis. The whole analyzing process is as follows: We begin from exploratory analysis to check if there is any special structure of the data, followed by identification of spatial trend. We would like to analyze the data without spatial trends because this will reflect the intrinsic covariance structure of the data. After detrending, we will check for existence of anisotropy. Model fitting will be conducted after all these preliminary work has been done. Semivariogram fitting and likelihood fitting models are considered. Some model selection criteria are applied to select the best fit and predicted model. Last but not least, we will make inference on the predicted models.\\
 	
 	Most of our studies relate only to population density with locations and time. We only consider the two covariates: distance to Metro and distance to Expressway in model fitting and is also separate from models with population density. We study the effects of the covariates by fitted models.
 	
@@ -113,6 +113,10 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Image Plots of Frequency by Hour \label{fig:image}}
 	\end{figure}
 \FloatBarrier
+Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD.\\
+
+	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed. From the histograms, we can see that frequency is in exponential shape with even steeper slope. A Gamma distribution may be more appropriate. A log transformation may not be very helpful.
+
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist.png}
 		\caption{Histograms of Frequency by Hour \label{fig:hist}}
@@ -123,10 +127,6 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Histograms of log-Frequency by Hour \label{fig:lghist}}
 	\end{figure}
 
-	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD.
-	
-	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed. From the histograms, we can see that frequency is in exponential shape with even steeper slope. A Gamma distribution may be more appropriate. A log transformation may not be very helpful.
-	
 	For the two covariates, they are also exponentially distributed. This indicates that more people are concentrated near metro lines and expressways.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist_x.png}
@@ -136,7 +136,9 @@ The spatial pattern of population density has a direct relationship with traffic
 
 	\subsection{Spatial Trend}\label{sec:spatialtrend}
 	
-	In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side boxplot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude are shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As shown, there is a curvature relationship between population density and two coordination variables.	
+	In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side boxplot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude are shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As shown, there is a curvature relationship between population density and two coordination variables.	\\
+	
+	Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help us find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lat.png}
 		\caption{Population Density and Latitude\label{fig:lat}}
@@ -148,7 +150,7 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Population Density and Longitude\label{fig:long}}
 	\end{figure}
 	\FloatBarrier
-	Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help us find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals. 
+	 
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{boxcox.png}
 		\caption{Parameters for Box-Cox Transformation\label{fig:boxcox}}
@@ -175,19 +177,19 @@ The spatial pattern of population density has a direct relationship with traffic
 	\indent$\hat{\beta_5}=1.271*10^5$.\\
 	Estimates for other time periods are shown in Appendix \ref{sec:appb}.
 	
-	As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendix \ref{sec:appa}.
+	As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendix \ref{sec:appa}.\\
 	
 	Thus, instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
 	
 	
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{geo5.png}
+		\includegraphics[width=\textwidth,height=0.35\textheight]{geo5.png}
 		\caption{Exploratory Plot before Detrending(5:00-6:00 am) \label{fig:geo5}}
 	\end{figure}
 	\FloatBarrier
 	
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{gres5.png}
+		\includegraphics[width=\textwidth,height=0.35\textheight]{gres5.png}
 		\caption{Exploratory Plot after Detrending(5:00-6:00 am)\label{fig:gres5}}
 	\end{figure}
 	\FloatBarrier
@@ -195,7 +197,7 @@ The spatial pattern of population density has a direct relationship with traffic
 	
 	
 	\subsection{Isotropy}\label{sec:anis}
-	Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance.
+	Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance.\\
 	
 	To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different directions are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the directions plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
 	
@@ -206,7 +208,7 @@ The spatial pattern of population density has a direct relationship with traffic
 	\FloatBarrier
 	
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{esc.png}
+		\includegraphics[width=\textwidth,height=0.4\textheight]{esc.png}
 		\caption{Empirical Semivariogram Contour plot\label{fig:esc}}
 	\end{figure}
 	\FloatBarrier
@@ -215,11 +217,12 @@ The spatial pattern of population density has a direct relationship with traffic
 	\subsection{Model Fitting} \label{sec:resfit}
 	All preliminary work has been done. The next step is analyzing the processed data. Again, we start from visualization to study the intrinsic properties of the data.
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{semi.png}
+		\includegraphics[width=\textwidth,height=0.35\textheight]{semi.png}
 		\caption{Semivariogram with Classical and Cressie Weight \label{fig:semi}}
-	\end{figure}
+	\end{figure}\\
 \FloatBarrier
-	Figure \ref{fig:semi} shows the semivariogram by time. There is obvious difference between the classical and Cressie weights, especially in 8-9 and 9-10 time period. As the scale is quite large, the difference is severe. Since Cressie weight is more robust, which can also be seen from plots, Cressie weight is used in the analysis.
+
+	Figure \ref{fig:semi} shows the semivariogram by time. There is obvious difference between the classical and Cressie weights, especially in 8-9 and 9-10 time period. As the scale is quite large, the difference is severe. Since Cressie weight is more robust, which can also be seen from plots, Cressie weight is used in the analysis.\\
 	
 	Figure \ref{fig:semi_one} further convinces our induction in Section \ref{sec:meth} in that the semivariogram becomes decreasing after 0.1. We select 0.15 as our largest distance in further analysis as 0.15 corresponding to roughly 14km. In addition, Figure \ref{fig:semi_one} also shows that the variance is increasing by time. The curves are more steady in earlier times while change severely at later times. This implies a trend from homogeneity to heterogeneity.
 	\begin{figure}[!ht]
@@ -278,7 +281,7 @@ The spatial pattern of population density has a direct relationship with traffic
 	\end{table}
 	
 	\subsubsection{Effects of Covariates}
-	Afterwards, we study the effects of covariates on frequency. Figure \ref{fig:disme} and Figure \ref{fig:disex} show the relationship of frequency on the two covariates over time.
+	Afterwards, we study the effects of covariates on frequency. Figure \ref{fig:disme} and Figure \ref{fig:disex} show the relationship of frequency on the two covariates over time.\\
 	
 	Distances to transportation corridors have impact on population density with the smaller the distance, the larger the density. Also, as time increases, the population density also increases and the increase is more concentrated on shorter distances. Thus we conclude that the closer to transportation corridors, the more people. In addition, as time goes by, more people are gathering towards the metros or expressways.
 	\begin{figure}[!ht]
@@ -314,12 +317,17 @@ The spatial pattern of population density has a direct relationship with traffic
 	Most of the coefficients are significant, further indicating that the covariates have impact on population density. The impact is huge since the parameter estimations are very close to zero because Gamma family uses inverse link. Results from model further prove previous conclusions from visualization.
 	
 	\subsection{Prediction}
-	For visualization, we only present a comparison of true image with predicted images at 5:00 - 6:00 am, shown in Figure \ref{fig:pred5}. Residual sum of squares are compared at all time periods (Figure \ref{fig:predsum}).
+	For visualization, we only present a comparison of true image with predicted images at 5:00 - 6:00 am, shown in Figure \ref{fig:pred5}. Residual sum of squares are compared at all time periods (Figure \ref{fig:predsum}).\\	
+	
+	Although in each individual fitting, empirical methods fit better than likelihood fitting (see Figure \ref{fig:semsph} and Figure \ref{fig:likexp} in Appendix), for predicted models, the likelihood models are better than empirical fittings.\\
+	
+	Figure \ref{fig:predexp} displays predictions over time from likelihood fitted models with exponential covariance. It is clear that population movement is along transportation corridors.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{prediction_at_5.png}
 		\caption{Comparison between True Model and Predicted Models \label{fig:pred5}}
 	\end{figure}
 \FloatBarrier
+
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics{pred_result_total.png}
@@ -327,9 +335,6 @@ The spatial pattern of population density has a direct relationship with traffic
 	\end{figure}
 \FloatBarrier
 
-	 Although in each individual fitting, empirical methods fit better than likelihood fitting (see Figure \ref{fig:semsph} and Figure \ref{fig:likexp} in Appendix), for predicted models, the likelihood models are better than empirical fittings.
-	 
-	 Figure \ref{fig:predexp} displays predictions over time from likelihood fitted models with exponential covariance. It is clear that population movement is along transportation corridors.
 	 \begin{figure}[!ht]
 	 	\includegraphics[width=\textwidth]{pred_exp.png}
 	 	\caption{Predictions with Exponential Likelihood Models by Hour \label{fig:predexp}}
@@ -339,9 +344,9 @@ The spatial pattern of population density has a direct relationship with traffic
 	 
 
 	\section{Conclusion}\label{sec:con}
-	Nowadays, urban planners are facing with more challenges to adapt to rapid growth of modern metropolitan and urban dynamics. Effectively responding to urban problems such as congestion and stampede is more emphasized than ever before. Cellular data provides a promising solution for such problems for its effectiveness and high resolution. In this paper, we propose a method to demonstrate the spatial and temporal characteristics of population movement both quantitatively and qualitatively, based on cellular data.
+	Nowadays, urban planners are facing with more challenges to adapt to rapid growth of modern metropolitan and urban dynamics. Effectively responding to urban problems such as congestion and stampede is more emphasized than ever before. Cellular data provides a promising solution for such problems for its effectiveness and high resolution. In this paper, we propose a method to demonstrate the spatial and temporal characteristics of population movement both quantitatively and qualitatively, based on cellular data.\\
 	
-	In this study, we aggregated our data on an hourly basis, and this avoids us to obtain any further conclusion of higher accuracy in terms of time and population density. In the future, we plan to aggregate the data with higher resolution to make more detailed conclusion.
+	In this study, we aggregated our data on an hourly basis, and this avoids us to obtain any further conclusion of higher accuracy in terms of time and population density. In the future, we plan to aggregate the data with higher resolution to make more detailed conclusion.\\
 	
 	This paper analyzes population movement in Shanghai during morning peak hours on a typical weekday using point-referenced data models in spatial analysis. Based on our study, especially the prediction plots, we have several findings:
 	\begin{itemize}
@@ -352,7 +357,7 @@ The spatial pattern of population density has a direct relationship with traffic
 		\item Population movement in along transportation corridors.
 	\end{itemize}
 
-	Since time is limited, there are still several directions to go further for future analyses.
+	Since time is limited, there are still several directions to go further for future analyses.\\
 	
 	 First, we also did areal analyses but did not finish it. We could finish conducting areal analysis and then compare the results with geostatistical analysis.	Second, we can repeat the whole process for residuals from model with covariates. That is, the detrend model can include covariates.	Third, we should also consider Bayesian models and then compare between the results. Fourth, a spatio-temporal model may be considered instead of looking at the trend by time from plots. Fifth, When making predictions, a leave-one-out cross validation may be applied to get a more accurate prediction.
 		
@@ -884,11 +889,12 @@ The spatial pattern of population density has a direct relationship with traffic
 		\end{tabular}
 	\end{table}
 
-
-	\clearpage
 	\section{Appendices -- R codes}
-	\begin{verbatim}
-		
-	\end{verbatim}
+	Please see attachments:
+	\begin{itemize}
+		\item 01\_DataClearn.R
+		\item 02\_PlotFunctions.R
+		\item 03\_MainAnalysis.R
+	\end{itemize}
 	
 \end{document}

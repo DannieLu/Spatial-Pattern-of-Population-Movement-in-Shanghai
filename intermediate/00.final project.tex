@@ -2,7 +2,8 @@
 \usepackage[pdftex]{color, graphicx}
 \usepackage{amsmath, amsfonts, amssymb, mathrsfs}
 %\usepackage{dcolumn}
-\usepackage{natbib}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{0.2ex}
 %\usepackage{cite}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
@@ -31,18 +32,18 @@
 	\maketitle
 	
 	\begin{abstract}
-		As increasing number of people are living in urban area, rising issue such as deteriorating periodical traffic congestion in central business districts is gaining more and more attention. The fundamental question to alleviate traffic congestion in urban area is to figure out where the population origins and how population moves spatially. In this report, we applied a spatiotemporal model to analyze the characteristics of population density in metropolitan based on cellular data. Specifically, taking Shanghai as a case study, the spatial and temporal pattern of population density was discussed. Different spatial models were fitted and compared. Predictions were made based on selected models and the results are displayed in choropleth map. The population movement pattern is discussed based on the map. Results show that during the morning peak hours, population move from all over the city to central areas. Areas with relative high population density expand, grow and converge along transportation corridors. 
+		As increasing number of people are living in urban area, rising issues such as deteriorating periodical traffic congestion in central business districts is gaining more and more attention. The fundamental question to alleviate traffic congestion in urban area is to figure out where the population origins and how population moves spatially. In this report, we applied a spatiotemporal model to analyze the characteristics of population density in metropolitan based on cellular data. Specifically, taking Shanghai as a case study, the spatial and temporal pattern of population density was discussed. Different spatial models were fitted and compared. Predictions were made based on selected models and the results are displayed in choropleth map. The population movement pattern is discussed based on the map. Results show that during the morning peak hours, population moves from all over the city to central areas. Areas with relative high population density expand, grow and converge along transportation corridors. 
 	\end{abstract}
-	\textbf{ {\em Key words}: Cellular Data, Periodical Traffic, Population Movement, Spatial Analysis.}
+	\textbf{ {\em Key words}}: Cellular Data, Likelihood, Periodical Traffic, Population Movement, Semivariogram, Spatial Analysis.
 	
 	\section{Introduction}\label{sec:intro}
-	Worldwide, urban population has been growing steadily during the past decades, from 33.56\% of the world’s population in 1960 to 53.86\% in 2015. In developed country, the proportion is even higher. 82\% of total population in United States was from urban area in 2015(World Bank, 2015). As increasing number of people are living in urban area, the rising issues such as limited land resource and deteriorating recurrent traffic congestion are repeatedly emphasized by transportation planning institutes. One of the major causes of recurrent traffic congestion is high intensity development in districts where the traffic attraction exceeds the accommodation volume of traffic system. Central Business District (CBD) is therefore becoming the key area to congestion solution as it has been bringing remarkable pressure to transportation system during peak hours in weekday due to their high traffic attraction (Willett K, 2006). 
+	Worldwide, urban population has been growing steadily during the past decades, from 33.56\% of the world's population in 1960 to 53.86\% in 2015. In developed countries, the proportion is even higher. 82\% of total population in United States was from urban areas in 2015(World Bank, 2015). As increasing number of people are living in urban areas, the rising issues such as limited land resource and deteriorating recurrent traffic congestion are repeatedly emphasized by transportation planning institutes. One of the major causes of recurrent traffic congestion is high intensity development in districts where the traffic attraction exceeds the accommodation volume of traffic system. Central Business District (CBD) is therefore becoming the key area to congestion solution as it has been bringing remarkable pressure to transportation system during peak hours on weekdays due to their high traffic attraction (Willett K, 2006). 
 	
 	Central Business District (CBD) is a major destination for urban area. According to a traffic survey of 63 cities in US in the 1950s, about one in every five metropolitan residents has at least one destination in the CBD during each weekday (Foley D L, 1952). Integration of multiple services within a small area is convenient not only for people living in the vicinity but also for people living elsewhere in the city. However, the price to pay is that area with higher developing density requires transportation system with larger capacity during peak hours (Mindali O, 2004), especially in big metropolitan like New York, Sydney and Shanghai. As a consequence, traffic congestion in CBD areas has become a bottleneck for every growing metropolitan to serve better city life.
 	
 	Researchers have been seeking for solutions to alleviating recurrent traffic congestion for years. Sufficient work has been done on analyzing spatial and temporal characteristic of travel behavior during peak hours. Traditional method to acquire travel pattern information is to conduct household survey, which is usually inefficient and expensive. Nowadays, high density of cellular towers and deep penetration of wireless service provides us with detailed travel information with high accuracy in precise timings. Previous studies have shown a promising future of mobile data in exploring commuting traffic. Compared with traditional way of exploring travel pattern, cellular data stands out for wider coverage area, better representative of population with all kinds of travel pattern, and more detailed information with high accuracy and precise timing. Thus, cellular data allows us to study temporal and spatial travel characteristics of higher graininess. 
 	
-	Midtown in Shanghai is one of the largest central business districts in the world, which makes it a suitable place to study travel pattern related to CBD. Based on cellular data collected in Shanghai, we’re going to discuss spatial and temporal characteristics of travel pattern related to CBD in Shanghai. In this study, we treat the study area as a continuous field. In section 1, we give a brief introduction of our data, the goal of our study, and make some exploratory analysis to prepare spatial data for modeling. In section 2, we introduce the methodology adopted to build, evaluate and apply the spatial models we fit. In section 3, we demonstrate and discuss the results of our empirical study, model fitting and prediction. At last, conclusions are drawn from the results and discussion. 	
+	Midtown in Shanghai is one of the largest central business districts in the world, which makes it a suitable place to study travel pattern related to CBD. Based on cellular data collected in Shanghai, we're going to discuss spatial and temporal characteristics of travel pattern related to CBD in Shanghai. In this study, we treat the study area as a continuous field. In section \ref{sec:data}, we give a brief introduction of our data, the goal of our study, and make some exploratory analysis to prepare spatial data for modeling. In section \ref{sec:meth}, we introduce the methodology adopted to build, evaluate and apply the spatial models we fit. Afterwards, we demonstrate and discuss the results of our empirical study, model fitting and prediction in section \ref{sec:res}. At last, conclusions are drawn from the results and discussion in section \ref{sec:con}. 	
 	
 	\section{Data Description}\label{sec:data}
 We collected geodetic position information of all users in Shanghai from China Mobile for a continuous 24-hour period. China Mobile is the biggest carrier in China, with 64\% total ownership in China (China Mobile, China Unicom and China Telecom, 2016). The dataset includes coded mobile phone ID, date, time, latitude and longitude of corresponding cellular tower. Cellular towers are infrastructure that enables voice and data services for mobile phones. They operate in different radio frequencies, and allow users to maintain their connections while traveling from one base station to another. In total, we collected more than 1.1 billion cell tower hands-off records. These records are from 37,450 different cell towers all over Shanghai with average density of 5.91 cell tower per kilometer square.
@@ -55,7 +56,7 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Study Area and Aggregation Grid \label{fig:area}}
 	\end{figure}
 \FloatBarrier
-	The accuracy of location information we get depends on the density of cell towers. Instead of accurate location of mobile phone users, cellular data recorded location of cell tower that is nearest to the mobile phone users. As we can see in Figure \ref{fig:tower}, cell towers are not evenly spaced. The density in the center area is higher than outer areas. As a result, the coverage area of each cellular tower is different. To simplify the situation, study area is partitioned into a 28*28 grid, each areal unit is one square kilometer. All cellular information from one areal unit is aggregated into one fictional cell tower in the geo-center of the areal unit (Figure \ref{fig:tower}). Hence, we have a regular point-referenced data to establish spatial model. In terms of study period, our goal is exploring spatial and temporal pattern of population in rush hours in the morning. Previous study shows typical morning rush hours for metropolitan CBDs are between 7:00 and 9:00 am. Therefore, we extract cellular data from 5:00 am to 10:00 am to cover this range.
+	The accuracy of location information we get depends on the density of cell towers. Instead of accurate location of mobile phone users, cellular data records location of cell tower that is nearest to the mobile phone users. As we can see in Figure \ref{fig:tower}, cell towers are not evenly spaced. The density in the center area is higher than outer areas. As a result, the coverage area of each cellular tower is different. To simplify the situation, study area is partitioned into a 28*28 grid, each areal unit is one square kilometer. All cellular information from one areal unit is aggregated into one fictional cell tower in the geo-center of the areal unit (Figure \ref{fig:tower}). Hence, we have a regular point-referenced data to establish spatial model. In terms of study period, our goal is exploring spatial and temporal pattern of population in rush hours in the morning. Generally, typical morning rush hours for metropolitan CBDs are between 7:00 and 9:00 am. Therefore, we extract cellular data from 5:00 am to 10:00 am to cover this range.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{tower.png}
 		\caption{Original Cell Towers and Aggregated Cell Towers \label{fig:tower}}
@@ -63,10 +64,14 @@ The spatial pattern of population density has a direct relationship with traffic
 	\FloatBarrier
 	
 	\section{Methodologies}\label{sec:meth}
-	Based on our data characteristics and aggregation methods, we treat our data as point-referenced data and apply the corresponding spatial theories for analysis. The whole analyzing process is as follows: We begin from exploratory analysis to check if there is any special structure of the data. Then followed by identification of spatial trend. We would like to analyze the data without spatial trends because this will reflect the intrinsic covariance structure of the data. After detrending, we will check for existence of anisotropy. Model fitting will be conducted after all these preliminary work has been done. Semivariogram fitting and likelihood fitting models are considered. Some model selection criteria are applied to select the best fit and predicted model. Last but not least, we will make inference on the predicted models.
+	Based on our data characteristics and aggregation methods, we treat our data as point-referenced data and apply the corresponding spatial theories for analysis. The whole analyzing process is as follows: We begin from exploratory analysis to check if there is any special structure of the data, followed by identification of spatial trend. We would like to analyze the data without spatial trends because this will reflect the intrinsic covariance structure of the data. After detrending, we will check for existence of anisotropy. Model fitting will be conducted after all these preliminary work has been done. Semivariogram fitting and likelihood fitting models are considered. Some model selection criteria are applied to select the best fit and predicted model. Last but not least, we will make inference on the predicted models.
+	
+	Most of our studies relate only to population density with locations and time. We only consider the two covariates: distance to Metro and distance to Expressway in model fitting and is also separate from models with population density. We study the effects of the covariates by fitted models.
 	
 	\subsection{Preliminary Analysis}
-	Most of the preliminary checks are based on visualization, except for spatial trend detection, where model fitting is conducted. The trend is mainly diagnosed with coordinates.
+ 	All studies in preparation for model fitting are owed to preliminary analyses. Most of the preliminary checks are based on visualization, except for spatial trend detection, where model fitting is conducted. The trend is mainly diagnosed with coordinates. Stepwise selection starting with 2nd order model is used to select the best model for each hour. AIC is used as criterion.
+ 	
+ 	In the preliminaries, we check both frequency variable and logarithm of the variable. For trend analysis, we also plot the boxcox transformation, which also suggesting a logarithm transformation. However, as shown in the results, taking logarithm will not help improve the result greatly. We tend to use the original data.
 	\subsection{Model Fitting}
 	When plotting the semivariogram, the plot is not reliable if the distance is too large. In data preparation, we aggregated the data to a square of 28km by 28km, indicating that the largest distance is the diagonal line. However, as people are more concentrated in the center, the distance of interest should not be too large. Thus in the following model fitting, we select the largest distance to be around half of the edges, i.e 14 km.
 	\subsection{Prediction}
@@ -307,9 +312,8 @@ The spatial pattern of population density has a direct relationship with traffic
 			\hline
 		\end{tabular}
 	\end{table}
-=======
+
 	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed.
->>>>>>> origin/master
 
 	Most of the coefficients are significant, further indicating that the covariates have impact on population density. The impact is huge since the parameter estimations are very close to zero because Gamma family uses inverse link. Results from model further prove previous conclusions from visualization.
 	
@@ -357,11 +361,30 @@ The spatial pattern of population density has a direct relationship with traffic
 		\item Fourth, a spatio-temporal model may be considered instead of looking at the trend by time from plots.
 		\item Fifth, When making predictions, a leave-one-out cross validation may be applied to get a more accurate prediction.
 	\end{itemize}
-\cite{khan2013mobile}
 	
 	\section{Reference}\label{sec:ref}
-	\bibliography{ref}
-	\bibliographystyle{plain}
+	\noindent World Bank. “Urban population’’, 2015.\\
+	\url{http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS}\\
+	
+	\noindent Mindali O, Raveh A, Salomon I. Urban density and energy consumption: a new look at old statistics [J]. Transportation Research Part A: Policy and Practice, 2004, 38(2): 143-162.\\
+	
+	\noindent Foley D L. The daily movement of population into central business districts [J]. American Sociological Review, 1952, 17(5): 538-543.\\
+	
+	\noindent Willett K. Stuck in traffic and stuck for solutions: Brisbane’s congestion crisis[C]. Australian Institute of Planning and Management (Qld) Seminar, Brisbane, QLD, 2006.\\
+	
+	\noindent Olayiwola K O, Olaseni A M, Fashina O. Traffic Congestion Problems in Central Business District (CBD) Ikeja, Lagos Metropolis, Nigeria[J]. Journal of Research on Humanities and Social Sciences, 2014, 4(1): 23-32.\\
+	
+	\noindent Thériault, Marius, et al. "Modelling commuter trip length and duration within GIS: Application to an OD survey." Journal for Geographic Information and Decision Analysis 3.1 (1999): 41-55.\\
+	
+	\noindent Dong, Honghui, et al. "Urban traffic commuting analysis based on mobile phone data." 17th International IEEE Conference on Intelligent Transportation Systems (ITSC). IEEE, 2014.\\
+	
+	\noindent Center Transportation Studies. "Final Evaluation Report for the CAPITAL-ITS Operational Test and Demonstration Program." University of Maryland College Park (1997).\\
+	
+	\noindent Fontaine, Michael D., Anjani P. Yakkala, and Brian Lee Smith. Probe sampling strategies for traffic monitoring systems based on wireless location technology. No. FHWA/VTRC 07-CR12. 2007.\\
+	
+	\noindent Liu, H. X., Danczyk, A., Brewer, R., Starr, R. (2008). Evaluation of cell phone traffic data in Minnesota. TRB 87th annual meeting compendium of papers CD-ROM.\\
+	
+	\noindent Steenbruggen, John, et al. "Mobile phone data from GSM networks for traffic parameter and urban spatial pattern assessment: a review of applications and opportunities." GeoJournal 78.2 (2013): 223-243.\\
 	
 	\clearpage
 	\appendix

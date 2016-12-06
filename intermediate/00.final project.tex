@@ -73,7 +73,7 @@ The spatial pattern of population density has a direct relationship with traffic
  	
  	In the preliminaries, we check both frequency variable and logarithm of the variable. For trend analysis, we also plot the boxcox transformation, which also suggesting a logarithm transformation. However, as shown in the results, taking logarithm will not help improve the result greatly. We tend to use the original data.
 	\subsection{Model Fitting}
-	When plotting the semivariogram, the plot is not reliable if the distance is too large. In data preparation, we aggregated the data to a square of 28km by 28km, indicating that the largest distance is the diagonal line. However, as people are more concentrated in the center, the distance of interest should not be too large. Thus in the following model fitting, we select the largest distance to be around half of the edges, i.e 14 km.
+	When plotting the semivariogram, the plot is not reliable if the distance is too large. In data preparation, we aggregated the data to a square of 28km by 28km, indicating that the largest distance is the diagonal line, which is around 40 km. However, as people are more concentrated in the center, the distance of interest should not be too large. Thus in model fitting, we select the largest distance to be around half of the edges, i.e 14 km.
 	\subsection{Prediction}
 	Model selection for best predicted model is conducted by both visualization and residual sum of squares comparison. Predicted images are based on predicted values at the interpolated points when plotting image for true data rather than the recorded places of true data in the study area. Thus we can compare the predicted models to the true data. 
 	

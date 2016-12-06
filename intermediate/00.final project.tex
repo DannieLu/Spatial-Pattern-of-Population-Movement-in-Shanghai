@@ -97,18 +97,20 @@
 	From the table, it is clear to see that the locations do not vary greatly in longitude and latitude. The frequency, distance to Metro and distance to road have large range and do not seem to be symmetric. There seems no problematic data. We then focus on the frequency variable and we will check the image plot (Figure \ref{fig:image}), perspective plot (Figure \ref{fig:perp} in Appendix \ref{sec:appa}), histogram (Figure \ref{fig:hist}), boxplot (Figure \ref{fig:boxplot} in Appendix \ref{sec:appa}) and qqplot (Figure \ref{fig:qq} in Appendix \ref{sec:appa}) on the variable. Due to page limitation, we only present the image plot and histograms in the paper. The other plots are put to appendices.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{image.png}
-		\caption{Image Plots by Hour \label{fig:image}}
+		\caption{Image Plots of Frequency by Hour \label{fig:image}}
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist.png}
-		\caption{Histograms by Hour \label{fig:hist}}
+		\caption{Histograms of Frequency by Hour \label{fig:hist}}
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{hist_log.png}
-		\caption{Histograms  by Hour \label{fig:lghist}}
+		\caption{Histograms of log-Frequency by Hour \label{fig:lghist}}
 	\end{figure}
 
 	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD by time.
+	
+	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed.
 
 
 	\section{Conclusion}\label{sec:con}
@@ -121,15 +123,23 @@
 	\section{Appendices -- Plots} \label{sec:appa}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{persp.png}
-		\caption{Perspective Plot by Hour \label{fig:perp}}
+		\caption{Perspective Plot of Frequency by Hour \label{fig:perp}}
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{box.png}
-		\caption{Boxplots by Hour \label{fig:boxplot}}
+		\caption{Boxplots of Frequency by Hour \label{fig:boxplot}}
 	\end{figure}
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{qq.png}
-		\caption{QQplots by Hour \label{fig:qq}}
+		\caption{QQ-Plots of Frequency by Hour \label{fig:qq}}
+	\end{figure}
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{box_log.png}
+		\caption{Boxplots of log-Frequency by Hour \label{fig:lgboxplot}}
+	\end{figure}
+	\begin{figure}[!ht]
+		\includegraphics[width=\textwidth]{qq.png}
+		\caption{QQ-Plots of log-Frequency by Hour \label{fig:lgqq}}
 	\end{figure}
 
 	\section{Appendices -- R codes}

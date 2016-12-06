@@ -123,7 +123,7 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Histograms of log-Frequency by Hour \label{fig:lghist}}
 	\end{figure}
 
-	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD by time.
+	Image plots are set to be the same scales where dark red color represents low values while bright yellow colors indicate high values. It is clear that bright colors are centered in the middle and the color becomes brighter and brighter by time. That is, more people are gathering to CBD.
 	
 	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed. From the histograms, we can see that frequency is in exponential shape with even steeper slope. A Gamma distribution may be more appropriate. A log transformation may not be very helpful.
 	
@@ -136,8 +136,7 @@ The spatial pattern of population density has a direct relationship with traffic
 
 	\subsection{Spatial Trend}\label{sec:spatialtrend}
 	
-	In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side bar plot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude is shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As is shown, there is a curvature relationship between population density and two coordination variables. 
-	
+	In order to prepare spatial data for stationarity procss analysis, we need to check the correlation between the response and location. Side by side boxplot is used to demonstrate the relationship between response and location. Population density with respect to latitude and longitude are shown in Figure \ref{fig:lat} and Figure \ref{fig:long} respectively. As shown, there is a curvature relationship between population density and two coordination variables.	
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{lat.png}
 		\caption{Population Density and Latitude\label{fig:lat}}
@@ -149,13 +148,12 @@ The spatial pattern of population density has a direct relationship with traffic
 		\caption{Population Density and Longitude\label{fig:long}}
 	\end{figure}
 	\FloatBarrier
-	
-	Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, Covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help use find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals. 
+	Therefore, we fit polynomial regression of order two to remove the underlying spatial trend. Naturally, covariates include latitude, longitude, their quadratic term and interaction. For response, two scenarios are set: in first scenario, we set population density as response; in the other scenario, we set log population density as response. Box-cox transformation is used to help us find best transformation parameter. Figure \ref{fig:boxcox} shows value zero maximize the likelihood across the parameter space, indicating a log transformation may produce better residuals. 
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{boxcox.png}
 		\caption{Parameters for Box-Cox Transformation\label{fig:boxcox}}
 	\end{figure}
-	\FloatBarrier
+	\FloatBarrier	
 	
 	For both scenarios, stepwise selection is used for variable screening. Under AIC criterion, full model (Model \ref{mod:polyreg} ) is selected for its best performance.
 	
@@ -166,9 +164,7 @@ The spatial pattern of population density has a direct relationship with traffic
 	where,\\
 	$Y(s_i)$ is population density at location $s_i$;\\
 	$x_{1i}$ is latitude of location $s_i$;\\
-	$x_{2i}$ is longitude of location $s_i$;\\
-	
-	
+	$x_{2i}$ is longitude of location $s_i$;\\	
 	
 	For each hour, we remove the underlying spatial trend using polynomial regression model \ref{mod:polyreg} fitted above. By comparing two scenarios, we find that there is no observable improvement in detrending for log scale scenario while the improvement in residual for original scale scenario is obvious. As a result, we adopt the polynomial regression model in scenario one: population density as response. Part of our fitting results is show below as parameter estimates for $5:00-6:00$ am:\\
 	\indent $\hat{\beta_0}=-4.524*10^9$;\\
@@ -177,11 +173,11 @@ The spatial pattern of population density has a direct relationship with traffic
 	\indent$\hat{\beta_3}=-5.698*10^5$;\\
 	\indent$\hat{\beta_4}=-3.018*10^5$;\\
 	\indent$\hat{\beta_5}=1.271*10^5$.\\
-	Estimates for other time periods are shown in Appendices.\\
+	Estimates for other time periods are shown in Appendix \ref{sec:appb}.
 	
-	As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendices.\\
+	As is displayed in Figure \ref{fig:geo5} and Figure \ref{fig:gres5} , spatial pattern removed after detrending. Residuals for 5:00 to 6:00 am fall in a constant band within $-10000$ and  $10000$. No observable spatial trend is discovered after removing the underlying process. Similar results for other hours are shown in plots in Appendix \ref{sec:appa}.
 	
-	Thus,instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
+	Thus, instead of using population density, residuals for each location produced in Model \ref{mod:polyreg} are used to conduct spatial analysis in the following sections.
 	
 	
 	\begin{figure}[!ht]
@@ -199,9 +195,9 @@ The spatial pattern of population density has a direct relationship with traffic
 	
 	
 	\subsection{Isotropy}\label{sec:anis}
-	Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance. \\
+	Isotropy means the covariance function of the spatial random variable depends on the displacement vector only through its length. This is always a desirable property as it simplifies the covariance structure and we can express the covariance structure as a function of distance.
 	
-	To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different direction are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the direction plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
+	To check for isotropy assumption, two widely used methods are to look at the empirical semivariogram contour plots and directional semivariance plots. First we start with directional semivariance plot shown in Figure \ref{fig:dir_semi}. The plots show that semivariances for different directions are close to each other except the tail part where sample size is small, indicating there is no significant difference in semivariance among all the directions plotted. For complementary, we further check the empirical semivariogram contour plots shown in Figure \ref{fig:esc}. The contour plot shows unique peak in the center of study area, outlined by circular contour lines which indicating an acceptable isotropy situation.
 	
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{dir_semi.png}
@@ -224,12 +220,14 @@ The spatial pattern of population density has a direct relationship with traffic
 	\end{figure}
 \FloatBarrier
 	Figure \ref{fig:semi} shows the semivariogram by time. There is obvious difference between the classical and Cressie weights, especially in 8-9 and 9-10 time period. As the scale is quite large, the difference is severe. Since Cressie weight is more robust, which can also be seen from plots, Cressie weight is used in the analysis.
+	
+	Figure \ref{fig:semi_one} further convinces our induction in Section \ref{sec:meth} in that the semivariogram becomes decreasing after 0.1. We select 0.15 as our largest distance in further analysis as 0.15 corresponding to roughly 14km. In addition, Figure \ref{fig:semi_one} also shows that the variance is increasing by time. The curves are more steady in earlier times while change severely at later times. This implies a trend from homogeneity to heterogeneity.
 	\begin{figure}[!ht]
 		\includegraphics[width=\textwidth]{semi_full.png}
 		\caption{Semivariogram with All Time in One \label{fig:semi_one}}
 	\end{figure}
 \FloatBarrier
-	Figure \ref{fig:semi_one} further convinces our induction in Section \ref{sec:meth} in that the semivariogram becomes decreasing after 0.1. We select 0.15 as our largest distance in further analysis as 0.15 corresponding to a roughly 14km. In addition, Figure \ref{fig:semi_one} also shows that the variance is increasing by time. The curves are more steady in earlier times while change severely at later times. This implies a trend from homogeneity to heterogeneity.
+	
 	
 	\subsubsection{Semivario Fitting}
 	Next, we try to capture the behavior of semivariogram within 0.15 distance by fitting semivariogram models. Cressie weight is applied while 8 covariance matrices are considered: spherical, exponential, Gaussian, cubic, Matern, circular, power and power.exponential. The corresponding estimates of parameters with residual sum of squares are listed in Tables in Appendix \ref{sec:appb}. Table \ref{tbl:compsem} lists the residual sum of squares of the eight models in different time slots. The last column calculates the mean residual of different time for each model. Based on the result, we can see the best model with smallest residual sum of squares is the Spherical model. The results are shown in Table \ref{semsph}. The practical range is around 0.1, which is smaller than 0.15, our choice of maximum distance.
@@ -281,18 +279,18 @@ The spatial pattern of population density has a direct relationship with traffic
 	
 	\subsubsection{Effects of Covariates}
 	Afterwards, we study the effects of covariates on frequency. Figure \ref{fig:disme} and Figure \ref{fig:disex} show the relationship of frequency on the two covariates over time.
+	
+	Distances to transportation corridors have impact on population density with the smaller the distance, the larger the density. Also, as time increases, the population density also increases and the increase is more concentrated on shorter distances. Thus we conclude that the closer to transportation corridors, the more people. In addition, as time goes by, more people are gathering towards the metros or expressways.
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{dist2metro.png}
+		\includegraphics[width=\textwidth,height=0.45\textheight]{dist2metro.png}
 		\caption{Relationship of Frequency on Distance2Metro \label{fig:disme}}
 	\end{figure}
 \FloatBarrier
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{dist2express.png}
+		\includegraphics[width=\textwidth,height=0.45\textheight]{dist2express.png}
 		\caption{Relationship of Frequency on Distance2Expressway \label{fig:disex}}
 	\end{figure}
 \FloatBarrier
-	
-	Distances to transportation corridors have impact on population density with the smaller the distance, the larger the density. Also, as time increases, the population density also increases and the increase is more concentrated with shorter distances. Thus we conclude that the closer to transportation corridors, the more people. In addition, as time goes by, more people are gathering towards the metros or expressways.
 	
 	As shown in Section \ref{sec:reseda}, the frequency variable does not follow normal distribution, so a generalized model is considered. The histogram in Figure \ref{fig:hist} shows that a Gamma distribution seems appropriate for frequency. Also, the frequency, or density variable can be treated as count data due to our data aggregation method with disperse variance. Thus negative binomial family is also considered. For both with and without spatial effects model, we start with full quadratic terms. AIC is used in model selection. For GLM model with negative binomial family, AIC is not available. Thus residual sum of squares is compared to GLM model with Gamma family and the Gamma family has a much smaller residual sum of squares. After all comparisons, the best model is GAM model with spatial effect using Gamma family. Results are shown in Table \ref{tbl:bestx}. Results for other models are shown in Appendix \ref{sec:appb}.	
 	% latex table generated in R 3.3.1 by xtable 1.8-2 package
@@ -313,8 +311,6 @@ The spatial pattern of population density has a direct relationship with traffic
 		\end{tabular}
 	\end{table}
 
-	Histograms show that frequency is highly skewed. However, after log transformation, the histograms are still not desirable (shown in Figure \ref{fig:lghist}). Similarly, boxplot and qqplot also show that variable frequency does not follow normal distribution. After log transformation, it is still not normally distributed.
-
 	Most of the coefficients are significant, further indicating that the covariates have impact on population density. The impact is huge since the parameter estimations are very close to zero because Gamma family uses inverse link. Results from model further prove previous conclusions from visualization.
 	
 	\subsection{Prediction}
@@ -325,19 +321,22 @@ The spatial pattern of population density has a direct relationship with traffic
 	\end{figure}
 \FloatBarrier
 	\begin{figure}[!ht]
-		\includegraphics[width=\textwidth]{pred_result_total.png}
+		\centering
+		\includegraphics{pred_result_total.png}
 		\caption{Summary of Residual Sum of Squares between True Model and Predicted Models \label{fig:predsum}}
 	\end{figure}
 \FloatBarrier
 
 	 Although in each individual fitting, empirical methods fit better than likelihood fitting (see Figure \ref{fig:semsph} and Figure \ref{fig:likexp} in Appendix), for predicted models, the likelihood models are better than empirical fittings.
+	 
+	 Figure \ref{fig:predexp} displays predictions over time from likelihood fitted models with exponential covariance. It is clear that population movement is along transportation corridors.
 	 \begin{figure}[!ht]
 	 	\includegraphics[width=\textwidth]{pred_exp.png}
 	 	\caption{Predictions with Exponential Likelihood Models by Hour \label{fig:predexp}}
 	 \end{figure}
  \FloatBarrier
  
-	 Figure \ref{fig:predexp} displays predictions over time from likelihood fitted models with exponential covariance. It is clear that population movement is along transportation corridors.
+	 
 
 	\section{Conclusion}\label{sec:con}
 	Nowadays, urban planners are facing with more challenges to adapt to rapid growth of modern metropolitan and urban dynamics. Effectively responding to urban problems such as congestion and stampede is more emphasized than ever before. Cellular data provides a promising solution for such problems for its effectiveness and high resolution. In this paper, we propose a method to demonstrate the spatial and temporal characteristics of population movement both quantitatively and qualitatively, based on cellular data.
@@ -353,15 +352,10 @@ The spatial pattern of population density has a direct relationship with traffic
 		\item Population movement in along transportation corridors.
 	\end{itemize}
 
-	Due to time limitation, this report still has room for improvement.
-	\begin{itemize}
-		\item First, we also did areal analyses but did not finish it. We could conducted areal analysis and then compare the results with geostatistical analysis.
-		\item Second, we can repeat the whole process for residuals from model with covariates. That is, the detrend model can include covariates.
-		\item Third, we should also consider Bayesian models and then compare between the results.
-		\item Fourth, a spatio-temporal model may be considered instead of looking at the trend by time from plots.
-		\item Fifth, When making predictions, a leave-one-out cross validation may be applied to get a more accurate prediction.
-	\end{itemize}
+	Since time is limited, there are still several directions to go further for future analyses.
 	
+	 First, we also did areal analyses but did not finish it. We could finish conducting areal analysis and then compare the results with geostatistical analysis.	Second, we can repeat the whole process for residuals from model with covariates. That is, the detrend model can include covariates.	Third, we should also consider Bayesian models and then compare between the results. Fourth, a spatio-temporal model may be considered instead of looking at the trend by time from plots. Fifth, When making predictions, a leave-one-out cross validation may be applied to get a more accurate prediction.
+		
 	\section{Reference}\label{sec:ref}
 	\noindent World Bank. “Urban population’’, 2015.\\
 	\url{http://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS}\\

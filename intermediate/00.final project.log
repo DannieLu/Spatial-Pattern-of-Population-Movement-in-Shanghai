@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.13)  6 DEC 2016 15:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.9.13)  6 DEC 2016 15:47
 entering extended mode
 **00.final*project.tex
 
@@ -399,148 +399,135 @@ tistics/spatial/Spatial_Project/intermediate/hist_log.png>]
 <lat.png, id=159, 531.48563pt x 362.10281pt>
 File: lat.png Graphic file (type png)
  <use lat.png>
-Package pdftex.def Info: lat.png used on input line 142.
+Package pdftex.def Info: lat.png used on input line 141.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [8 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/hist_x.png>]
 <long.png, id=167, 531.48563pt x 362.10281pt>
 File: long.png Graphic file (type png)
  <use long.png>
-Package pdftex.def Info: long.png used on input line 148.
+Package pdftex.def Info: long.png used on input line 147.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
 <boxcox.png, id=169, 531.48563pt x 362.10281pt>
 File: boxcox.png Graphic file (type png)
  <use boxcox.png>
-Package pdftex.def Info: boxcox.png used on input line 155.
+Package pdftex.def Info: boxcox.png used on input line 153.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [9 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/lat.png> <C:/Users/gaocy/Documents
 /useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proje
 ct/intermediate/long.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--181
+Underfull \hbox (badness 10000) in paragraph at lines 163--168
 
  []
 
 [10 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/boxcox.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-<geo5.png, id=192, 531.48563pt x 362.10281pt>
+<geo5.png, id=194, 531.48563pt x 362.10281pt>
 File: geo5.png Graphic file (type png)
  <use geo5.png>
-Package pdftex.def Info: geo5.png used on input line 188.
+Package pdftex.def Info: geo5.png used on input line 184.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<gres5.png, id=193, 531.48563pt x 362.10281pt>
+<gres5.png, id=195, 531.48563pt x 362.10281pt>
 File: gres5.png Graphic file (type png)
  <use gres5.png>
-Package pdftex.def Info: gres5.png used on input line 194.
+Package pdftex.def Info: gres5.png used on input line 190.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [11 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/geo5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
-
- []
-
-<dir_semi.png, id=203, 531.48563pt x 362.10281pt>
+<dir_semi.png, id=205, 531.48563pt x 362.10281pt>
 File: dir_semi.png Graphic file (type png)
  <use dir_semi.png>
-Package pdftex.def Info: dir_semi.png used on input line 207.
+Package pdftex.def Info: dir_semi.png used on input line 203.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [12 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/gres5.png>]
-<esc.png, id=211, 531.48563pt x 362.10281pt>
+<esc.png, id=213, 531.48563pt x 362.10281pt>
 File: esc.png Graphic file (type png)
  <use esc.png>
-Package pdftex.def Info: esc.png used on input line 213.
+Package pdftex.def Info: esc.png used on input line 209.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<semi.png, id=212, 531.48563pt x 362.10281pt>
+<semi.png, id=214, 531.48563pt x 362.10281pt>
 File: semi.png Graphic file (type png)
  <use semi.png>
-Package pdftex.def Info: semi.png used on input line 222.
+Package pdftex.def Info: semi.png used on input line 218.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [13 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/dir_semi.png> <C:/Users/gaocy/Doc
 uments/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial
-_Project/intermediate/esc.png>] <semi_full.png, id=221, 531.48563pt x 362.10281
+_Project/intermediate/esc.png>] <semi_full.png, id=226, 531.48563pt x 362.10281
 pt>
 File: semi_full.png Graphic file (type png)
 
 <use semi_full.png>
-Package pdftex.def Info: semi_full.png used on input line 228.
+Package pdftex.def Info: semi_full.png used on input line 226.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
  [14 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/semi.png>]
-Overfull \hbox (57.21756pt too wide) in paragraph at lines 241--255
+Overfull \hbox (57.21756pt too wide) in paragraph at lines 239--253
  [][] 
  []
 
 
-Overfull \hbox (39.25803pt too wide) in paragraph at lines 264--280
+Overfull \hbox (39.25803pt too wide) in paragraph at lines 262--278
  [][] 
  []
 
 [15 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/semi_full.png>]
-<dist2metro.png, id=246, 648.17157pt x 602.25pt>
+<dist2metro.png, id=248, 648.17157pt x 602.25pt>
 File: dist2metro.png Graphic file (type png)
  <use dist2metro.png>
 Package pdftex.def Info: dist2metro.png used on input line 285.
-(pdftex.def)             Requested size: 433.62pt x 402.89888pt.
+(pdftex.def)             Requested size: 433.61993pt x 308.96297pt.
  [16]
-<dist2express.png, id=254, 648.17157pt x 602.25pt>
+<dist2express.png, id=256, 648.17157pt x 602.25pt>
 File: dist2express.png Graphic file (type png)
  <use dist2express.png>
 Package pdftex.def Info: dist2express.png used on input line 290.
-(pdftex.def)             Requested size: 433.62pt x 402.89888pt.
+(pdftex.def)             Requested size: 433.61993pt x 308.96297pt.
 
 [17 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
-tistics/spatial/Spatial_Project/intermediate/dist2metro.png>] [18 <C:/Users/gao
-cy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/S
-patial_Project/intermediate/dist2express.png>]
-<prediction_at_5.png, id=272, 531.48563pt x 362.10281pt>
+tistics/spatial/Spatial_Project/intermediate/dist2metro.png> <C:/Users/gaocy/Do
+cuments/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatia
+l_Project/intermediate/dist2express.png>]
+<prediction_at_5.png, id=269, 531.48563pt x 362.10281pt>
 File: prediction_at_5.png Graphic file (type png)
 
 <use prediction_at_5.png>
-Package pdftex.def Info: prediction_at_5.png used on input line 323.
+Package pdftex.def Info: prediction_at_5.png used on input line 319.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [19
+ [18
 
 ]
-<pred_result_total.png, id=282, 236.38312pt x 105.39375pt>
+<pred_result_total.png, id=278, 236.38312pt x 105.39375pt>
 File: pred_result_total.png Graphic file (type png)
 
 <use pred_result_total.png>
-Package pdftex.def Info: pred_result_total.png used on input line 328.
-(pdftex.def)             Requested size: 433.62pt x 193.33984pt.
- <pred_exp.png, id=285, 694.84593pt x 390.70969pt>
+Package pdftex.def Info: pred_result_total.png used on input line 325.
+(pdftex.def)             Requested size: 236.38254pt x 105.39348pt.
+ <pred_exp.png, id=282, 694.84593pt x 390.70969pt>
 File: pred_exp.png Graphic file (type png)
 
 <use pred_exp.png>
-Package pdftex.def Info: pred_exp.png used on input line 335.
+Package pdftex.def Info: pred_exp.png used on input line 334.
 (pdftex.def)             Requested size: 433.62pt x 243.82332pt.
- [20 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [19 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/prediction_at_5.png> <C:/Users/ga
 ocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/
 Spatial_Project/intermediate/pred_result_total.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 349.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 348.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 349.
- [21 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 348.
+ [20 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/pred_exp.png>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
@@ -552,7 +539,25 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--368
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
+
+ []
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
@@ -561,14 +566,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no © in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
@@ -579,8 +583,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no © in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
@@ -591,255 +593,240 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
-
- []
-
-[23] <persp.png, id=310, 531.48563pt x 362.10281pt>
+[22] <persp.png, id=307, 531.48563pt x 362.10281pt>
 File: persp.png Graphic file (type png)
  <use persp.png>
-Package pdftex.def Info: persp.png used on input line 393.
+Package pdftex.def Info: persp.png used on input line 387.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<box.png, id=311, 531.48563pt x 362.10281pt>
+<box.png, id=308, 531.48563pt x 362.10281pt>
 File: box.png Graphic file (type png)
  <use box.png>
-Package pdftex.def Info: box.png used on input line 398.
+Package pdftex.def Info: box.png used on input line 392.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [24
+ [23
 
  <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatis
 tics/spatial/Spatial_Project/intermediate/persp.png>]
-<box_log.png, id=317, 531.48563pt x 362.10281pt>
+<box_log.png, id=314, 531.48563pt x 362.10281pt>
 File: box_log.png Graphic file (type png)
  <use box_log.png>
-Package pdftex.def Info: box_log.png used on input line 403.
+Package pdftex.def Info: box_log.png used on input line 397.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<qq.png, id=318, 531.48563pt x 362.10281pt>
+<qq.png, id=315, 531.48563pt x 362.10281pt>
 File: qq.png Graphic file (type png)
  <use qq.png>
-Package pdftex.def Info: qq.png used on input line 408.
+Package pdftex.def Info: qq.png used on input line 402.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [25 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [24 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/box.png> <C:/Users/gaocy/Document
 s/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proj
-ect/intermediate/box_log.png>] <qq_log.png, id=327, 531.48563pt x 362.10281pt>
+ect/intermediate/box_log.png>] <qq_log.png, id=323, 531.48563pt x 362.10281pt>
 File: qq_log.png Graphic file (type png)
  <use qq_log.png>
-Package pdftex.def Info: qq_log.png used on input line 413.
+Package pdftex.def Info: qq_log.png used on input line 407.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<geo6.png, id=328, 531.48563pt x 362.10281pt>
+<geo6.png, id=324, 531.48563pt x 362.10281pt>
 File: geo6.png Graphic file (type png)
  <use geo6.png>
-Package pdftex.def Info: geo6.png used on input line 418.
+Package pdftex.def Info: geo6.png used on input line 412.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [26 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [25 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/qq.png> <C:/Users/gaocy/Documents
 /useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Proje
-ct/intermediate/qq_log.png>] <gres6.png, id=336, 531.48563pt x 362.10281pt>
+ct/intermediate/qq_log.png>] <gres6.png, id=333, 531.48563pt x 362.10281pt>
 File: gres6.png Graphic file (type png)
  <use gres6.png>
-Package pdftex.def Info: gres6.png used on input line 423.
+Package pdftex.def Info: gres6.png used on input line 417.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<geo7.png, id=337, 531.48563pt x 362.10281pt>
+<geo7.png, id=334, 531.48563pt x 362.10281pt>
 File: geo7.png Graphic file (type png)
  <use geo7.png>
-Package pdftex.def Info: geo7.png used on input line 428.
+Package pdftex.def Info: geo7.png used on input line 422.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [27 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [26 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/geo6.png> <C:/Users/gaocy/Documen
 ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
-ject/intermediate/gres6.png>] <gres7.png, id=346, 531.48563pt x 362.10281pt>
+ject/intermediate/gres6.png>] <gres7.png, id=343, 531.48563pt x 362.10281pt>
 File: gres7.png Graphic file (type png)
  <use gres7.png>
-Package pdftex.def Info: gres7.png used on input line 433.
+Package pdftex.def Info: gres7.png used on input line 427.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<geo8.png, id=347, 531.48563pt x 362.10281pt>
+<geo8.png, id=344, 531.48563pt x 362.10281pt>
 File: geo8.png Graphic file (type png)
  <use geo8.png>
-Package pdftex.def Info: geo8.png used on input line 438.
+Package pdftex.def Info: geo8.png used on input line 432.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [28 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [27 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/geo7.png> <C:/Users/gaocy/Documen
 ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
-ject/intermediate/gres7.png>] <gres8.png, id=356, 531.48563pt x 362.10281pt>
+ject/intermediate/gres7.png>] <gres8.png, id=353, 531.48563pt x 362.10281pt>
 File: gres8.png Graphic file (type png)
  <use gres8.png>
-Package pdftex.def Info: gres8.png used on input line 443.
+Package pdftex.def Info: gres8.png used on input line 437.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<geo9.png, id=357, 531.48563pt x 362.10281pt>
+<geo9.png, id=354, 531.48563pt x 362.10281pt>
 File: geo9.png Graphic file (type png)
  <use geo9.png>
-Package pdftex.def Info: geo9.png used on input line 448.
+Package pdftex.def Info: geo9.png used on input line 442.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [29 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [28 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/geo8.png> <C:/Users/gaocy/Documen
 ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
-ject/intermediate/gres8.png>] <gres9.png, id=366, 531.48563pt x 362.10281pt>
+ject/intermediate/gres8.png>] <gres9.png, id=363, 531.48563pt x 362.10281pt>
 File: gres9.png Graphic file (type png)
  <use gres9.png>
-Package pdftex.def Info: gres9.png used on input line 453.
+Package pdftex.def Info: gres9.png used on input line 447.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<semfit_spherical.png, id=367, 531.48563pt x 362.10281pt>
+<semfit_spherical.png, id=364, 531.48563pt x 362.10281pt>
 File: semfit_spherical.png Graphic file (type png)
 
 <use semfit_spherical.png>
-Package pdftex.def Info: semfit_spherical.png used on input line 458.
+Package pdftex.def Info: semfit_spherical.png used on input line 452.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [30 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [29 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/geo9.png> <C:/Users/gaocy/Documen
 ts/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Pro
 ject/intermediate/gres9.png>]
-<semfit_exponential.png, id=376, 531.48563pt x 362.10281pt>
+<semfit_exponential.png, id=373, 531.48563pt x 362.10281pt>
 File: semfit_exponential.png Graphic file (type png)
 
 <use semfit_exponential.png>
-Package pdftex.def Info: semfit_exponential.png used on input line 463.
+Package pdftex.def Info: semfit_exponential.png used on input line 457.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<semfit_gaussian.png, id=377, 531.48563pt x 362.10281pt>
+<semfit_gaussian.png, id=374, 531.48563pt x 362.10281pt>
 File: semfit_gaussian.png Graphic file (type png)
 
 <use semfit_gaussian.png>
-Package pdftex.def Info: semfit_gaussian.png used on input line 468.
+Package pdftex.def Info: semfit_gaussian.png used on input line 462.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
- [31 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
+ [30 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSt
 atistics/spatial/Spatial_Project/intermediate/semfit_spherical.png> <C:/Users/g
 aocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial
 /Spatial_Project/intermediate/semfit_exponential.png>] <semfit_cubic.png, id=38
-6, 531.48563pt x 362.10281pt>
+2, 531.48563pt x 362.10281pt>
 File: semfit_cubic.png Graphic file (type png)
  <use semfit_cubic.png>
-Package pdftex.def Info: semfit_cubic.png used on input line 473.
+Package pdftex.def Info: semfit_cubic.png used on input line 467.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<semfit_matern.png, id=387, 531.48563pt x 362.10281pt>
+<semfit_matern.png, id=383, 531.48563pt x 362.10281pt>
 File: semfit_matern.png Graphic file (type png)
  <use semfit_matern.png>
-Package pdftex.def Info: semfit_matern.png used on input line 478.
+Package pdftex.def Info: semfit_matern.png used on input line 472.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[32 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+[31 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/semfit_gaussian.png> <C:/Users/gao
 cy/Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/S
 patial_Project/intermediate/semfit_cubic.png>]
-<semfit_circular.png, id=396, 531.48563pt x 362.10281pt>
+<semfit_circular.png, id=393, 531.48563pt x 362.10281pt>
 File: semfit_circular.png Graphic file (type png)
 
 <use semfit_circular.png>
-Package pdftex.def Info: semfit_circular.png used on input line 483.
+Package pdftex.def Info: semfit_circular.png used on input line 477.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<semfit_power.png, id=397, 531.48563pt x 362.10281pt>
+<semfit_power.png, id=394, 531.48563pt x 362.10281pt>
 File: semfit_power.png Graphic file (type png)
  <use semfit_power.png>
-Package pdftex.def Info: semfit_power.png used on input line 488.
+Package pdftex.def Info: semfit_power.png used on input line 482.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[33 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+[32 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/semfit_matern.png> <C:/Users/gaocy
 /Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spa
 tial_Project/intermediate/semfit_circular.png>]
-<semfit_poweredexp.png, id=406, 531.48563pt x 362.10281pt>
+<semfit_poweredexp.png, id=403, 531.48563pt x 362.10281pt>
 File: semfit_poweredexp.png Graphic file (type png)
 
 <use semfit_poweredexp.png>
-Package pdftex.def Info: semfit_poweredexp.png used on input line 493.
+Package pdftex.def Info: semfit_poweredexp.png used on input line 487.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<lik_spherical.png, id=407, 531.48563pt x 362.10281pt>
+<lik_spherical.png, id=404, 531.48563pt x 362.10281pt>
 File: lik_spherical.png Graphic file (type png)
  <use lik_spherical.png>
-Package pdftex.def Info: lik_spherical.png used on input line 498.
+Package pdftex.def Info: lik_spherical.png used on input line 492.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[34 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+[33 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/semfit_power.png> <C:/Users/gaocy/
 Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spat
 ial_Project/intermediate/semfit_poweredexp.png>]
-<lik_exponential.png, id=416, 531.48563pt x 362.10281pt>
+<lik_exponential.png, id=413, 531.48563pt x 362.10281pt>
 File: lik_exponential.png Graphic file (type png)
 
 <use lik_exponential.png>
-Package pdftex.def Info: lik_exponential.png used on input line 503.
+Package pdftex.def Info: lik_exponential.png used on input line 497.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<lik_gaussian.png, id=417, 531.48563pt x 362.10281pt>
+<lik_gaussian.png, id=414, 531.48563pt x 362.10281pt>
 File: lik_gaussian.png Graphic file (type png)
  <use lik_gaussian.png>
-Package pdftex.def Info: lik_gaussian.png used on input line 508.
+Package pdftex.def Info: lik_gaussian.png used on input line 502.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[35 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+[34 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/lik_spherical.png> <C:/Users/gaocy
 /Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spa
 tial_Project/intermediate/lik_exponential.png>]
-<lik_cubic.png, id=425, 531.48563pt x 362.10281pt>
+<lik_cubic.png, id=422, 531.48563pt x 362.10281pt>
 File: lik_cubic.png Graphic file (type png)
  <use lik_cubic.png>
-Package pdftex.def Info: lik_cubic.png used on input line 513.
+Package pdftex.def Info: lik_cubic.png used on input line 507.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-<lik_matern.png, id=426, 531.48563pt x 362.10281pt>
+<lik_matern.png, id=423, 531.48563pt x 362.10281pt>
 File: lik_matern.png Graphic file (type png)
  <use lik_matern.png>
-Package pdftex.def Info: lik_matern.png used on input line 518.
+Package pdftex.def Info: lik_matern.png used on input line 512.
 (pdftex.def)             Requested size: 433.62pt x 295.4344pt.
 
-[36 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
+[35 <C:/Users/gaocy/Documents/useful/study/VT/courses/taking/STAT5544SpatialSta
 tistics/spatial/Spatial_Project/intermediate/lik_gaussian.png> <C:/Users/gaocy/
 Documents/useful/study/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spat
-ial_Project/intermediate/lik_cubic.png>] [37 <C:/Users/gaocy/Documents/useful/s
+ial_Project/intermediate/lik_cubic.png>] [36 <C:/Users/gaocy/Documents/useful/s
 tudy/VT/courses/taking/STAT5544SpatialStatistics/spatial/Spatial_Project/interm
-ediate/lik_matern.png>] [38
+ediate/lik_matern.png>] [37
 
-] [39] [40] [41] [42
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 900.
- [43
+] [38] [39] [40] [41
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 900.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 894.
+ [42
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 894.
 
 ("C:\Users\gaocy\Documents\useful\study\VT\courses\taking\STAT5544SpatialStatis
 tics\spatial\Spatial_Project\intermediate\00.final project.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 900.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 900.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 894.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 894.
 Package rerunfilecheck Info: File `00.final*project.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 900.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 894.
  ) 
 Here is how much of TeX's memory you used:
- 7109 strings out of 493921
- 102154 string characters out of 3147282
+ 7108 strings out of 493921
+ 102147 string characters out of 3147282
  215998 words of memory out of 3000000
  10144 multiletter control sequences out of 15000+200000
  14529 words of font info for 58 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,10n,31p,1100b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,10n,31p,1100b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
@@ -850,9 +837,9 @@ c/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on "00.final project.pdf" (43 pages, 1588326 bytes).
+Output written on "00.final project.pdf" (42 pages, 1587658 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 136 named destinations out of 1000 (max. 500000)
+ 550 PDF objects out of 1000 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
  391 words of extra memory for PDF output out of 10000 (max. 10000000)
 
